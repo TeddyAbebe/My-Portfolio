@@ -21,7 +21,12 @@ export const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="primaryBtn resume_Btn">My Resume</button>
+                  <button
+                    className="primaryBtn resume_Btn"
+                    data-aos="flip-left"
+                  >
+                    My Resume
+                  </button>
                 </a>
               </div>
             </>

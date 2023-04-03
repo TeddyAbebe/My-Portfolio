@@ -84,7 +84,6 @@ header a {
   margin-left: 40px;
 }
 .logo {
-  /* border: solid red; */
   margin-top: 10px;
   height: 50px;
 }
@@ -107,6 +106,7 @@ header a {
     font-size: 25px;
     background: none;
   }
+
   .hideMenu {
     display: block;
     position: absolute;
@@ -114,6 +114,16 @@ header a {
     left: 0;
     width: 100%;
     background-color: var(--headingColor);
+  }
+  .logo {
+    height: 20px;
+  }
+
+  .heroContent h1 {
+    font-size: 25px !important;
+  }
+  .heroContent p {
+    font-size: 15px;
   }
   .skill_sec {
     margin-top: 5%;
@@ -157,7 +167,7 @@ section {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../public/images/BGC.jpg");
+  background-image: url("./components/data/images/BGC.jpg");
   opacity: 0.2;
   background-size: cover;
   background-attachment: fixed;
@@ -171,7 +181,7 @@ section {
   text-align: center;
 }
 .hero h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
   color: var(--primaryColor);
 }
@@ -179,9 +189,6 @@ section {
   margin: 0 10px;
 }
 
-.socials {
-  padding: 5%;
-}
 .socials a {
   border: 1px solid;
   align-items: center;
@@ -286,7 +293,7 @@ section {
   position: relative;
 }
 .hero.counter::after {
-  background-image: url("../public/images/some-facts-bg.png");
+  background-image: url("./components/data/images/some-facts-bg.png");
   height: 50vh;
 }
 .counter h1 {
@@ -426,7 +433,7 @@ footer i {
   }
 
   .hero::after {
-    background-image: url("../public/images/home-bg.png");
+    background-image: url("./components/data/images/home-bg.png");
     background-size: cover;
     object-fit: cover;
     width: 100%;

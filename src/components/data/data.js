@@ -1,3 +1,4 @@
+import React from "react";
 import {
   CloudOutlined,
   FavoriteBorder,
@@ -46,14 +47,16 @@ export const home = [
     text: "HELLO I'M",
     name: "Tewodros Abebe",
     do: "Full Stack Developer",
-    desc: "Motivated and dynamic Web Developer with a keen focus and experience in web application development and web layout design, with a strong work ethic and innate    ability to adapt in ever-changing and challenging environments.",
+    desc:
+      "Motivated and dynamic Web Developer with a keen focus and experience in web application development and web layout design, with a strong work ethic and innate    ability to adapt in ever-changing and challenging environments.",
     icon1: <GitHub />,
     icon2: <LinkedIn />,
   },
 ];
 export const about = [
   {
-    desc: "Hello, I'm a creative Full Stack Web Developer based in Ethiopia,who is very passionate and devoted to what I do. With a few years of experience, I have acquired the skills necessary to build great, appealing websites that meet the latest web standards.",
+    desc:
+      "Hello, I'm a creative Full Stack Web Developer based in Ethiopia,who is very passionate and devoted to what I do. With a few years of experience, I have acquired the skills necessary to build great, appealing websites that meet the latest web standards.",
     desc1:
       "Self-motivated with strong organizational and time management abilities also meeting production deadlines. Most importantly, I'm constantly trying to learn new skills to improve myself and my work.",
     cover: "./images/man.png",
@@ -64,19 +67,22 @@ export const services = [
     id: 1,
     icon: <Computer />,
     title: "Web Development",
-    desc: "I do some research before starting my development to choose the right way for the job.",
+    desc:
+      "I do some research before starting my development to choose the right way for the job.",
   },
   {
     id: 2,
     icon: <Code />,
     title: "Clean Code",
-    desc: "Working on projects, I write beautiful and clean codes to make them better readable for any partner or client.",
+    desc:
+      "Working on projects, I write beautiful and clean codes to make them better readable for any partner or client.",
   },
   {
     id: 3,
     icon: <SentimentSatisfiedAlt />,
     title: "Fully Responsive",
-    desc: "I design my websites for every screen size available and I make sure it looks great on every device",
+    desc:
+      "I design my websites for every screen size available and I make sure it looks great on every device",
   },
   {
     id: 4,
@@ -88,7 +94,8 @@ export const services = [
     id: 5,
     icon: <Search />,
     title: "Quick Learner",
-    desc: "I like to learn new things and I have the ability to learn it quickly.",
+    desc:
+      "I like to learn new things and I have the ability to learn it quickly.",
   },
   {
     id: 6,

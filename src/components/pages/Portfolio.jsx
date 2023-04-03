@@ -6,7 +6,7 @@ import { GitHub } from "@mui/icons-material";
 
 // const allCategory = ["all", ...new Set(portfolio.map((item) => item.category))]
 export const Portfolio = () => {
-  const [list, setLists] = useState(portfolio);
+  const [list] = useState(portfolio);
   // const [category, setCategory] = useState(allCategory)
   // console.log(setCategory)
 
