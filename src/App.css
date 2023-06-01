@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 * {
   padding: 0;
@@ -300,6 +304,7 @@ section {
   margin: 0;
 }
 /*---------counter-------------*/
+
 /*---------portfolio-------------*/
 
 article {
@@ -315,49 +320,73 @@ article img {
 article .box {
   position: relative;
   transition: 0.5s;
+  height: 395px;
+  background-color: #212222;
+  transform: scale(0.7);
+  border-radius: 18px;
 }
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.info {
+  width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-  transition: 2s;
-  transition: all 1s;
-  z-index: 1;
-  color: #000;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-.overlay::after {
-  content: "";
+.project_title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #f79f08;
+  letter-spacing: 2px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 30%;
+}
+.frames {
+  font-size: 15px;
+  font-weight: 600;
+  color: #555555;
+  position: absolute;
+  top: 40%;
+}
+.divider {
+  background-color: #949594;
+  height: 1.5px;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+}
+.desc {
+  position: absolute;
+  top: 55%;
+  font-size: 13px;
+  text-align: center;
+}
+.photo {
   width: 100%;
   height: 100%;
-  background-color: #fbe090;
-  z-index: -1;
-  border-radius: 5%;
-  transform: scale(1.05);
+  position: absolute;
+  top: -1px;
+  transition: 1s;
 }
-.overlay_icons {
+@media screen and (min-width: 768px) {
+  article .box:hover .photo {
+    cursor: pointer;
+    transform: scale(0.5, 0.35) translateY(-420px);
+  }
+}
+.icons {
   display: flex;
-  justify-content: space-between;
-  padding: 5%;
-  width: 50%;
+  gap: 60px;
+  position: absolute;
+  top: 90%;
+  cursor: pointer;
 }
-.overlay_icons a {
-  color: #212222;
-}
-.overlay_icons a:hover {
-  color: var(--primaryColor);
+.eye:hover{
   transform: scale(1.3);
-  transition-duration: 0.5s;
+}
+.git:hover{
+  transform: scale(1.3);
 }
 article .box:hover .overlay::after,
 article .box:hover .overlay {

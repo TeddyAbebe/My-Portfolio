@@ -130,50 +130,82 @@ export const project = [
     title: "LIENS OF CODE",
   },
 ];
+export const works = [
+  {
+    id: 1,
+    cover: "../images/port/akan.png",
+    name: "Freelance",
+    link: "https://akanpilot.co.uk/",
+    git: "https://github.com/TeddyAbebe/AKAN",
+    desc:
+      "I work on a platform serves as a valuable resource for businesses and individuals alike, providing invaluable insights into customer behavior and optimizing their journey for enhanced satisfaction and success.",
+    frames: "React | NodeJS | TailwindCSS",
+  },
+  {
+    id: 2,
+    cover: "../images/port/noteZ.jpg",
+    name: "Freelance",
+    link: "https://note-zipper-client.onrender.com/",
+    git: "https://github.com/TeddyAbebe/Note-Zipper-Client",
+    desc:
+      "I work on a platform that aims to support village school teachers by providing them with a powerful tool for taking short notes, capture key points, ideas, and important information quickly. It includes features such us search functionality enabling teachers to find and retrieve their notes effortlessly.",
+    frames: "React | NodeJS | MongoDB",
+  },
+];
 export const portfolio = [
   {
     id: 1,
     cover: "../images/port/Amazon.jpg",
-    name: "Amazon Website Replica",
-    category: "marketing",
+    name: "Amazon Website Clone",
     link: "https://aug-bc35b.firebaseapp.com/",
     git: "https://github.com/TeddyAbebe/Amazon-Clone",
+    desc:
+      "Amazon-clone app using react which is an e-commerce store with full functionality, front and back end.",
+    frames: "React | NodeJS | Firebase",
   },
   {
     id: 2,
     cover: "../images/port/Netflix.jpeg",
-    name: "Netflix Website Replica",
-    category: "design",
+    name: "Netflix Website Clone",
+
     link: "https://netflix-clone-4eba7.web.app/",
     git: "https://github.com/TeddyAbebe/Netflix-Clone",
+    desc:
+      "Netflix-clone using react which is an online video streaming services.",
+    frames: "React | TMBD-Movie | Firebase",
   },
   {
     id: 3,
     cover: "../images/port/Apple.jpeg",
-    name: "Apple Website Replica",
-    category: "development",
+    name: "Apple Website Clone",
+
     link: "https://apple-clone-135e7.web.app/",
     git: "https://github.com/TeddyAbebe/Apple-Website-Replica-by-React",
+    desc:
+      "Apple’s current website using React - created React components for various pages and sections - Integrated Apple’s YouTube channel with the website using REST API",
+    frames: "React | NodeJS | Nootstrap",
   },
   {
     id: 4,
     cover: "../images/port/Zoom.jpg",
-    name: "Zoom Replica",
-    category: "marketing",
+    name: "Zoom Clone",
     git: "https://github.com/TeddyAbebe/ZoomClone",
+    desc:
+      "Authored Zoom replica using Node.js. so that two or more users can go online and meet face to face.",
+    frames: "React | NodeJS",
   },
   // {
   //   id: 5,
   //   cover: "../images/port/port5.jpg",
   //   name: "Brand",
-  //   category: "design",
+
   //   title: "Brex Logo",
   // },
   // {
   //   id: 6,
   //   cover: "../images/port/port6.jpg",
   //   name: "Brand",
-  //   category: "development",
+
   //   title: "Brex Logo",
   // },
 ];

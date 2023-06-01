@@ -1,63 +1,49 @@
 import React, { useState } from "react";
 import { Heading } from "../common/Heading";
-import { portfolio } from "../data/data";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import { GitHub } from "@mui/icons-material";
+import { Projects } from "../common/Projects";
+import { portfolio, works } from "../data/data";
 
-// const allCategory = ["all", ...new Set(portfolio.map((item) => item.category))]
+
 export const Portfolio = () => {
   const [list] = useState(portfolio);
-  // const [category, setCategory] = useState(allCategory)
-  // console.log(setCategory)
-
-  // const filterItems = (category) => {
-  //   const newItems = portfolio.filter((item) => item.category === category)
-  //   setLists(newItems)
-  //   if (category === "all") {
-  //     setLists(portfolio)
-  //     return
-  //   }
-  // }
+  const [work] = useState(works);
 
   return (
     <>
       <article>
         <div className="container">
-          <Heading title="Portfolio" />
-          {/* <div className='catButton'>
-            {category.map((category) => (
-              <button className='primaryBtn' onClick={() => filterItems(category)} data-aos='zoom-out-down'>
-                {category}
-              </button>
+          <Heading title="Work Experience" />
+
+          <div className="content grid3">
+            {work.map((item) => (
+              <div className="box" data-aos="fade-up">
+                <Projects
+                  name={item.name}
+                  desc={item.desc}
+                  frames={item.frames}
+                  photo={item.cover}
+                  link={item.link}
+                  git={item.git}
+                />
+              </div>
             ))}
-          </div> */}
+          </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div className="container">
+          <Heading title="Personal Projects" />
+
           <div className="content grid3">
             {list.map((item) => (
               <div className="box" data-aos="fade-up">
-                <div className="img">
-                  <img src={item.cover} alt="" />
-                </div>
-                <div className="overlay">
-                  <h2>{item.name}</h2>
-                  <div className="overlay_icons">
-                    <a
-                      href={item.git}
-                      title="View Code On Github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <GitHub sx={{ fontSize: 45 }} />
-                    </a>
-                    <a
-                      href={item.link}
-                      title="Visit Site"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <VisibilityOutlinedIcon sx={{ fontSize: 45 }} />
-                    </a>
-                  </div>
-                </div>
+                <Projects
+                  name={item.name}
+                  desc={item.desc}
+                  frames={item.frames}
+                  photo={item.cover}
+                />
               </div>
             ))}
           </div>
