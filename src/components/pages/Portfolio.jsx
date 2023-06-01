@@ -13,10 +13,9 @@ export const Portfolio = () => {
       <article>
         <div className="container">
           <Heading title="Work Experience" />
-
           <div className="content grid3">
             {work.map((item) => (
-              <div className="box" data-aos="fade-up">
+              <div className="box" data-aos="flip-right">
                 <Projects
                   name={item.name}
                   desc={item.desc}
@@ -37,7 +36,7 @@ export const Portfolio = () => {
 
           <div className="content grid3">
             {list.map((item) => (
-              <div className="box" data-aos="fade-up">
+              <div className="box" data-aos="flip-left">
                 <Projects
                   name={item.name}
                   desc={item.desc}
