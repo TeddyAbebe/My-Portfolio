@@ -183,7 +183,7 @@ export const portfolio = [
     git: "https://github.com/TeddyAbebe/Apple-Website-Replica-by-React",
     desc:
       "Apple’s current website using React - created React components for various pages and sections - Integrated Apple’s YouTube channel with the website using REST API",
-    frames: "React | NodeJS | Nootstrap",
+    frames: "React | NodeJS | Bootstrap",
   },
   {
     id: 4,
@@ -194,13 +194,16 @@ export const portfolio = [
       "Authored Zoom replica using Node.js. so that two or more users can go online and meet face to face.",
     frames: "React | NodeJS",
   },
-  // {
-  //   id: 5,
-  //   cover: "../images/port/port5.jpg",
-  //   name: "Brand",
-
-  //   title: "Brex Logo",
-  // },
+  {
+    id: 5,
+    cover: "../images/port/InstaVersee.jpg",
+    name: "Insta-Verse",
+    link: "https://instaversee.netlify.app/",
+    git: "https://github.com/TeddyAbebe/InstaVerse_Client",
+    desc:
+      "A little social media type of app that can help users to Post their memories, Edit and Delete their story or memory.",
+    frames: "React | NodeJS | Ant-Design",
+  },
   // {
   //   id: 6,
   //   cover: "../images/port/port6.jpg",
