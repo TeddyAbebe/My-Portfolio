@@ -196,7 +196,7 @@ export const portfolio = [
   },
   {
     id: 5,
-    cover: "../images/port/InstaVersee.jpg",
+    cover: "../images/port/InstaVersee.png",
     name: "Insta-Verse",
     link: "https://instaversee.netlify.app/",
     git: "https://github.com/TeddyAbebe/InstaVerse_Client",
