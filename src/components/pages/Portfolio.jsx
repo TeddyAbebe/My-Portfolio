@@ -42,6 +42,7 @@ export const Portfolio = () => {
                   desc={item.desc}
                   frames={item.frames}
                   photo={item.cover}
+                  link={item.link}
                 />
               </div>
             ))}
