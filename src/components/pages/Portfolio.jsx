@@ -12,6 +12,8 @@ export const Portfolio = () => {
     <>
       <article>
         <div className="container">
+        <br />
+        <br />
           <Heading title="Work Experience" />
           <div className="content grid3">
             {work.map((item) => (
