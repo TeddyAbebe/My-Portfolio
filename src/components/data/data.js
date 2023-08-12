@@ -160,7 +160,7 @@ export const portfolio = [
     name: "Netflix Website Clone",
 
     link: "https://t-netflix-clone.netlify.app/",
-    git: "https://github.com/TeddyAbebe/Netflix-Clone",
+    git: "https://github.com/TeddyAbebe/Netflix-Client",
     desc: "Netflix-clone using react which is an online video streaming services.",
     frames: "React | TMBD-Movie | Firebase",
   },
