@@ -47,16 +47,14 @@ export const home = [
     text: "HELLO I'M",
     name: "Tewodros Abebe",
     do: "Full Stack Developer",
-    desc:
-      "Motivated and dynamic Web Developer with a keen focus and experience in web application development and web layout design, with a strong work ethic and innate    ability to adapt in ever-changing and challenging environments.",
+    desc: "Motivated and dynamic Web Developer with a keen focus and experience in web application development and web layout design, with a strong work ethic and innate    ability to adapt in ever-changing and challenging environments.",
     icon1: <GitHub />,
     icon2: <LinkedIn />,
   },
 ];
 export const about = [
   {
-    desc:
-      "Hello, I'm a creative Full Stack Web Developer based in Ethiopia,who is very passionate and devoted to what I do. With a few years of experience, I have acquired the skills necessary to build great, appealing websites that meet the latest web standards.",
+    desc: "Hello, I'm a creative Full Stack Web Developer based in Ethiopia,who is very passionate and devoted to what I do. With a few years of experience, I have acquired the skills necessary to build great, appealing websites that meet the latest web standards.",
     desc1:
       "Self-motivated with strong organizational and time management abilities also meeting production deadlines. Most importantly, I'm constantly trying to learn new skills to improve myself and my work.",
     cover: "./images/man.png",
@@ -67,22 +65,19 @@ export const services = [
     id: 1,
     icon: <Computer />,
     title: "Web Development",
-    desc:
-      "I do some research before starting my development to choose the right way for the job.",
+    desc: "I do some research before starting my development to choose the right way for the job.",
   },
   {
     id: 2,
     icon: <Code />,
     title: "Clean Code",
-    desc:
-      "Working on projects, I write beautiful and clean codes to make them better readable for any partner or client.",
+    desc: "Working on projects, I write beautiful and clean codes to make them better readable for any partner or client.",
   },
   {
     id: 3,
     icon: <SentimentSatisfiedAlt />,
     title: "Fully Responsive",
-    desc:
-      "I design my websites for every screen size available and I make sure it looks great on every device",
+    desc: "I design my websites for every screen size available and I make sure it looks great on every device",
   },
   {
     id: 4,
@@ -94,8 +89,7 @@ export const services = [
     id: 5,
     icon: <Search />,
     title: "Quick Learner",
-    desc:
-      "I like to learn new things and I have the ability to learn it quickly.",
+    desc: "I like to learn new things and I have the ability to learn it quickly.",
   },
   {
     id: 6,
@@ -137,8 +131,7 @@ export const works = [
     name: "Freelance",
     link: "https://akanpilot.co.uk/",
     git: "https://github.com/TeddyAbebe/AKAN",
-    desc:
-      "I work on a platform serves as a valuable resource for businesses and individuals alike, providing invaluable insights into customer behavior and optimizing their journey for enhanced satisfaction and success.",
+    desc: "I work on a platform serves as a valuable resource for businesses and individuals alike, providing invaluable insights into customer behavior and optimizing their journey for enhanced satisfaction and success.",
     frames: "React | NodeJS | TailwindCSS",
   },
   {
@@ -147,8 +140,7 @@ export const works = [
     name: "Freelance",
     link: "https://note-zipper-client.onrender.com/",
     git: "https://github.com/TeddyAbebe/Note-Zipper-Client",
-    desc:
-      "I work on a platform that aims to support village school teachers by providing them with a powerful tool for taking short notes, capture key points, ideas, and important information quickly. It includes features such us search functionality enabling teachers to find and retrieve their notes effortlessly.",
+    desc: "I work on a platform that aims to support village school teachers by providing them with a powerful tool for taking short notes, capture key points, ideas, and important information quickly. It includes features such us search functionality enabling teachers to find and retrieve their notes effortlessly.",
     frames: "React | NodeJS | MongoDB",
   },
 ];
@@ -159,8 +151,7 @@ export const portfolio = [
     name: "Amazon Website Clone",
     link: "https://aug-bc35b.firebaseapp.com/",
     git: "https://github.com/TeddyAbebe/Amazon-Clone",
-    desc:
-      "Amazon-clone app using react which is an e-commerce store with full functionality, front and back end.",
+    desc: "Amazon-clone app using react which is an e-commerce store with full functionality, front and back end.",
     frames: "React | NodeJS | Firebase",
   },
   {
@@ -168,10 +159,9 @@ export const portfolio = [
     cover: "../images/port/Netflix.jpeg",
     name: "Netflix Website Clone",
 
-    link: "https://netflix-clone-4eba7.web.app/",
+    link: "https://t-netflix-clone.netlify.app/",
     git: "https://github.com/TeddyAbebe/Netflix-Clone",
-    desc:
-      "Netflix-clone using react which is an online video streaming services.",
+    desc: "Netflix-clone using react which is an online video streaming services.",
     frames: "React | TMBD-Movie | Firebase",
   },
   {
@@ -181,8 +171,7 @@ export const portfolio = [
 
     link: "https://apple-clone-135e7.web.app/",
     git: "https://github.com/TeddyAbebe/Apple-Website-Replica-by-React",
-    desc:
-      "Apple’s current website using React - created React components for various pages and sections - Integrated Apple’s YouTube channel with the website using REST API",
+    desc: "Apple’s current website using React - created React components for various pages and sections - Integrated Apple’s YouTube channel with the website using REST API",
     frames: "React | NodeJS | Bootstrap",
   },
   {
@@ -190,8 +179,7 @@ export const portfolio = [
     cover: "../images/port/Zoom.jpg",
     name: "Zoom Clone",
     git: "https://github.com/TeddyAbebe/ZoomClone",
-    desc:
-      "Authored Zoom replica using Node.js. so that two or more users can go online and meet face to face.",
+    desc: "Authored Zoom replica using Node.js. so that two or more users can go online and meet face to face.",
     frames: "React | NodeJS",
   },
   {
@@ -200,8 +188,7 @@ export const portfolio = [
     name: "Insta-Verse",
     link: "https://instaversee.netlify.app/",
     git: "https://github.com/TeddyAbebe/InstaVerse_Client",
-    desc:
-      "A little social media type of app that can help users to Post their memories, Edit and Delete their story or memory.",
+    desc: "A little social media type of app that can help users to Post their memories, Edit and Delete their story or memory.",
     frames: "React | NodeJS | Ant-Design",
   },
   // {
