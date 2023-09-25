@@ -46,9 +46,9 @@ const Modal = ({ activeID, setShowModal }) => {
               <a
                 href={portfolio.github}
                 target="__blank"
-                className="hover:scale-110 hover:text-white rounded-full w-7 h-7 flex justify-center items-center hover:bg-slate-700 text-black"
+                className=" border border-slate-900 hover:scale-110 transition ease-in duration-300 hover:text-white rounded-full w-6 h-6 flex justify-center items-center hover:bg-slate-900 text-slate-900 font-serif"
               >
-                <i className="uil uil-github-alt text-xl"></i>
+                <i className="uil uil-github-alt text-lg"></i>
               </a>
             </div>
 
