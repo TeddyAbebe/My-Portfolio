@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import Aos from "aos";
+import { ToastContainer } from "react-toastify";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
@@ -10,8 +11,8 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Qualification from "./components/qualification/Qualification";
 import Up from "./components/scrollup/Up";
 // import Services from "./components/services/Services";
+// import Qua from "./components/qualification/Qua";
 import Skills from "./components/skills/Skills";
-import { ToastContainer } from "react-toastify";
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
         <About />
         <Skills />
         {/* <Services /> */}
+        {/* <Qua /> */}
         <Qualification />
         <Portfolio />
         <Contact />
