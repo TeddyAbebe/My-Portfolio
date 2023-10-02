@@ -46,9 +46,10 @@ const Modal = ({ activeID, setShowModal }) => {
               <a
                 href={portfolio.github}
                 target="__blank"
-                className=" border border-slate-900 hover:scale-110 transition ease-in duration-300 hover:text-white rounded-full w-6 h-6 flex justify-center items-center hover:bg-slate-900 text-slate-900 font-serif"
+                className="hover:text-gray-200 rounded-full w-7 h-7 flex justify-center items-center hover:bg-slate-900 text-slate-900"
               >
                 <i className="uil uil-github-alt text-lg"></i>
+                
               </a>
             </div>
 
@@ -56,7 +57,7 @@ const Modal = ({ activeID, setShowModal }) => {
               onClick={() => setShowModal(false)}
               className="absolute top-[0.7rem] right-[1rem] text-[25px] leading-0 cursor-pointer"
             >
-              <i className="uil uil-times "></i>
+              <i className="uil uil-times flex hover:bg-gray-300 hover:text-slate-800 rounded-full"></i>
             </button>
           </div>
         </div>
