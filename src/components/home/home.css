@@ -21,10 +21,10 @@
   transition: transform 500ms ease-in-out 25ms;
 }
 
-.home__social-icon:hover {
+/* .home__social-icon:hover {
   color: var(--title-color-dark);
   transform: translateX(0.4rem);
-}
+} */
 
 .home__title {
   margin-bottom: var(--mb-0-25);
@@ -71,6 +71,8 @@
   height: 300px;
   animation: profile__animate 8s ease-in-out infinite 1s;
 }
+
+
 
 @keyframes profile__animate {
   0% {
