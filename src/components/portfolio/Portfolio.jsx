@@ -43,7 +43,7 @@ const Portfolio = () => {
                 <div className="w-full h-full flex items-center justify-center">
                   <button
                     onClick={() => showModalHandler(portfolio.id)}
-                    className="text-white hover:text-black bg-black hover:bg-slate-200 py-2 px-4 rounded-[8px] font-bold ease-in duration-200 "
+                    className="text-white hover:text-black bg-black hover:bg-slate-200 py-2 px-4 rounded-[8px] font-serif font-bold ease-in duration-200 "
                   >
                     See Details
                   </button>
@@ -57,7 +57,7 @@ const Portfolio = () => {
           {nextItems < portfolios.length && portfolios.length > 6 && (
             <button
               onClick={loadMoreHandler}
-              className="text-white bg-black hover:bg-slate-800 py-2 px-4 rounded-[8px] font-[500] ease-in duration-200 "
+              className="text-white bg-black hover:bg-slate-800 py-2 px-4 rounded-[8px] font-[500] font-serif ease-in duration-200 "
             >
               Load More...
             </button>

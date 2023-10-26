@@ -48,6 +48,7 @@ const Contact = () => {
               <a
                 href="mailto:tewodros.abebe.mengistu@gmail.com"
                 className="contact__button"
+                target="blank"
               >
                 Write me
                 <i className="bx bx-right-arrow-alt contact__button-icon"></i>
@@ -108,7 +109,7 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            <button className="button button--flex transition duration-300 hover:scale-105">
+            <button className="button button--flex transition duration-300 hover:scale-105 font-serif">
               Send Message
               <svg
                 class="button__icon"
