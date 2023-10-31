@@ -93,15 +93,16 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--body-color);
+  background-color: rgb(198, 198, 198);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--title-color-dark);
+  border-radius: 20px;
 }
 
 * {
