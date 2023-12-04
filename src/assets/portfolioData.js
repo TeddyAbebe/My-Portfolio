@@ -1,16 +1,17 @@
-import portfolioImg01 from "./images/portfolio-01.jpg";
-import portfolioImg02 from "./images/portfolio-02.jpg";
-import portfolioImg03 from "./images/portfolio-03.jpg";
-import portfolioImg04 from "./images/portfolio-04.jpg";
-import portfolioImg05 from "./images/portfolio-05.jpg";
-import portfolioImg06 from "./images/portfolio-06.jpg";
-import portfolioImg07 from "./images/portfolio-07.jpg";
-import portfolioImg08 from "./images/portfolio-08.jpg";
+import AKAN from "./images/AKAN.png";
+import NoteZipper from "./images/NoteZipper.png";
+import MyMusicApp from "./images/MyMusicApp.png";
+import Amazon from "./images/Amazon.jpg";
+import Netflix from "./images/Netflix.jpg";
+import Apple from "./images/Apple.jpg";
+import Zoom from "./images/Zoom.jpg";
+import InstaVerse from "./images/InstaVerse.png";
+import EvoGym from "./images/EvoGym.png";
 
 const portfolios = [
   {
     id: "01",
-    imgUrl: portfolioImg01,
+    imgUrl: AKAN,
     category: "Web Design",
     title: "Commercial Website",
     description:
@@ -21,7 +22,7 @@ const portfolios = [
   },
   {
     id: "02",
-    imgUrl: portfolioImg02,
+    imgUrl: NoteZipper,
     category: "Ux",
     title: "Note taking Web App",
     description:
@@ -30,9 +31,22 @@ const portfolios = [
     siteUrl: "https://note-zipper-client.onrender.com/",
     github: "https://github.com/TeddyAbebe/Note-Zipper-Client",
   },
+
   {
     id: "03",
-    imgUrl: portfolioImg03,
+    imgUrl: EvoGym,
+    category: "Fitness",
+    title: "EvoGym Website",
+    description:
+      "Designed and developed the official website for EvoGym, a local fitness center dedicated to transforming lives through health and wellness. The website showcases class information, membership plans, and a user-friendly interface to support fitness enthusiasts on their journey to a healthier lifestyle.",
+    technologies: ["Vite-React", "TypeScript", "TailwindCSS"],
+    siteUrl: "https://evolgym.netlify.app/",
+    github: "https://github.com/TeddyAbebe/Gym",
+  },
+
+  {
+    id: "04",
+    imgUrl: MyMusicApp,
     category: "Ux",
     title: "Music Library Managers",
     description:
@@ -42,8 +56,8 @@ const portfolios = [
     github: "https://github.com/TeddyAbebe/JS-Music-Client",
   },
   {
-    id: "04",
-    imgUrl: portfolioImg04,
+    id: "05",
+    imgUrl: Amazon,
     category: "Web Design",
     title: "Amazon Website Clone",
     description:
@@ -53,8 +67,8 @@ const portfolios = [
     github: "https://github.com/TeddyAbebe/Amazon-Clone",
   },
   {
-    id: "05",
-    imgUrl: portfolioImg05,
+    id: "06",
+    imgUrl: Netflix,
     category: "Web Design",
     title: "Netflix Website Clone",
     description:
@@ -65,8 +79,8 @@ const portfolios = [
   },
 
   {
-    id: "06",
-    imgUrl: portfolioImg06,
+    id: "07",
+    imgUrl: Apple,
     category: "Ux",
     title: "Apple Website Clone",
     description:
@@ -76,8 +90,8 @@ const portfolios = [
     github: "https://github.com/TeddyAbebe/Apple-Website-Replica-by-React",
   },
   {
-    id: "07",
-    imgUrl: portfolioImg07,
+    id: "08",
+    imgUrl: Zoom,
     category: "Web Design",
     title: "Zoom Clone",
     description:
@@ -87,8 +101,8 @@ const portfolios = [
     github: "https://github.com/TeddyAbebe/ZoomClone",
   },
   {
-    id: "08",
-    imgUrl: portfolioImg08,
+    id: "09",
+    imgUrl: InstaVerse,
     category: "ux",
     title: "Insta-Verse",
     description:
