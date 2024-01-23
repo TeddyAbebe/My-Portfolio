@@ -5,10 +5,7 @@ const Modal = ({ activeID, setShowModal }) => {
   const portfolio = portfolios.find((portfolio) => portfolio.id === activeID);
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div
-        className="w-full h-full fixed top-0 left-0 bg-black bg-opacity-30 z-40"
-        onClick={() => setShowModal(false)}
-      ></div>
+      <div className="w-full h-full fixed top-0 left-0 bg-black bg-opacity-30 z-40"></div>
       <div className="w-full h-full flex items-center justify-center z-50">
         <div className=" mx-6 w-[600px] rounded-xl bg-white py-2 flex flex-col justify-center items-center gap-2 relative z-50">
           <div className="w-[40%]">
@@ -52,7 +49,7 @@ const Modal = ({ activeID, setShowModal }) => {
               </a>
             </div>
 
-            <div className="absolute top-[0.7rem] right-[1rem] w-7 h-7 cursor-pointer rounded-md flex  justify-center items-center hover:bg-gray-800 hover:text-[#fe0101]">
+            <div className="absolute top-[0.7rem] right-[1rem] w-7 h-7 cursor-pointer rounded-md flex  justify-center items-center  hover:shadow-inner hover:shadow-slate-900">
               <button onClick={() => setShowModal(false)} className="">
                 <i className="uil uil-times text-2xl"></i>
               </button>
