@@ -6,6 +6,7 @@ const Modal = ({ activeID, setShowModal }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="w-full h-full fixed top-0 left-0 bg-black bg-opacity-30 z-40"></div>
+
       <div className="w-full h-full flex items-center justify-center z-50">
         <div className=" mx-6 w-[600px] rounded-xl bg-white py-2 flex flex-col justify-center items-center gap-2 relative z-50">
           <div className="w-[40%]">
