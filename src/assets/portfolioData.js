@@ -66,6 +66,18 @@ const portfolios = [
 
   {
     id: Id(),
+    imgUrl: MyMusicApp,
+    category: "Full-Stack",
+    title: "Music Library Managers",
+    description:
+      "I've created a Full Stack Music Management App using the MERN stack. It allows users to add, edit, and remove Musics, and provides insightful music statistics. The backend uses ExpressJS and MongoDB, while the frontend is built with ReactJS and Redux.",
+    technologies: ["React", "Emotion", "Redux Toolkit", "Redux-Saga"],
+    siteUrl: "https://musicsss.netlify.app/",
+    github: "https://github.com/TeddyAbebe/JS-Music-Client",
+  },
+
+  {
+    id: Id(),
     imgUrl: Netflix,
     category: "Front-End",
     title: "Netflix Website Clone",
@@ -86,18 +98,6 @@ const portfolios = [
     technologies: ["React", "Node.js", "Firebase"],
     siteUrl: "https://aug-bc35b.firebaseapp.com/",
     github: "https://github.com/TeddyAbebe/Amazon-Clone",
-  },
-
-  {
-    id: Id(),
-    imgUrl: MyMusicApp,
-    category: "Full-Stack",
-    title: "Music Library Managers",
-    description:
-      "I've created a Full Stack Music Management App using the MERN stack. It allows users to add, edit, and remove Musics, and provides insightful music statistics. The backend uses ExpressJS and MongoDB, while the frontend is built with ReactJS and Redux.",
-    technologies: ["React", "Emotion", "Redux Toolkit", "Redux-Saga"],
-    siteUrl: "https://musicsss.netlify.app/",
-    github: "https://github.com/TeddyAbebe/JS-Music-Client",
   },
 
   {
