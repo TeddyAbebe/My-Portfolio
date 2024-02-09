@@ -1,13 +1,13 @@
 import AKAN from "./images/AKAN.png";
 import NoteZipper from "./images/NoteZipper.png";
-import MyMusicApp from "./images/MyMusicApp.png";
+import MyMusicApp from "./images/MusicHub.jpg";
 import Amazon from "./images/Amazon.jpg";
 import Netflix from "./images/Netflix.jpg";
 import Apple from "./images/Apple.jpg";
 import Zoom from "./images/Zoom.jpg";
-import InstaVerse from "./images/InstaVerse.png";
+import InstaVerse from "./images/InstaVerse.jpg";
 import EvoGym from "./images/EvoGym.png";
-import Chat from "./images/Chit-Chat.png";
+import Chat from "./images/chitchat.jpg";
 
 let idCounter = 0;
 
@@ -68,12 +68,30 @@ const portfolios = [
     id: Id(),
     imgUrl: MyMusicApp,
     category: "Full-Stack",
-    title: "Music Library Managers",
+    title: "Music Hub",
     description:
-      "I've created a Full Stack Music Management App using the MERN stack. It allows users to add, edit, and remove Musics, and provides insightful music statistics. The backend uses ExpressJS and MongoDB, while the frontend is built with ReactJS and Redux.",
-    technologies: ["React", "Emotion", "Redux Toolkit", "Redux-Saga"],
-    siteUrl: "https://musicsss.netlify.app/",
-    github: "https://github.com/TeddyAbebe/JS-Music-Client",
+      "I've created a Full Stack Music Management App using the MERN stack. It allows users to save their favorite playlist, and provides insightful music statistics. The backend uses ExpressJS and MongoDB, while the frontend is built with ReactJS and Redux.",
+    technologies: [
+      "Vite-React",
+      "Typescript",
+      "Styled-Component",
+      "Redux Toolkit",
+      "Redux-Saga",
+    ],
+    siteUrl: "https://muisc-hub.netlify.app/",
+    github: "https://github.com/TeddyAbebe/music-hub-client",
+  },
+
+  {
+    id: Id(),
+    imgUrl: InstaVerse,
+    category: "Full-Stack",
+    title: "Insta-Verse",
+    description:
+      "A social media type of app that can help users to Post their memories, and Share it with their friends.",
+    technologies: ["React", "Ant-Design", "Node.js"],
+    siteUrl: "https://instaversee.netlify.app/",
+    github: "https://github.com/TeddyAbebe/InstaVerse_Client",
   },
 
   {
@@ -122,18 +140,6 @@ const portfolios = [
     technologies: ["Socket.io", "Node.js"],
     siteUrl: "#",
     github: "https://github.com/TeddyAbebe/ZoomClone",
-  },
-
-  {
-    id: Id(),
-    imgUrl: InstaVerse,
-    category: "Full-Stack",
-    title: "Insta-Verse",
-    description:
-      "A social media type of app that can help users to Post their memories, Edit and Delete their story or memory.",
-    technologies: ["React", "Ant-Design", "Node.js"],
-    siteUrl: "https://instaversee.netlify.app/",
-    github: "https://github.com/TeddyAbebe/InstaVerse_Client",
   },
 ];
 
