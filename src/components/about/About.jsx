@@ -23,7 +23,7 @@ const About = () => {
           </p>
 
           <a
-            href="https://drive.google.com/file/d/1ky2rrBoyVHvuprqCfNiBIb5naah2Xq8E/view?usp=sharing"
+            href="https://drive.google.com/file/d/1Dleu3ynSNUn-c9sKSEVhTfst8kaLktpY/view?usp=sharing?usp=sharing"
             target="_blank"
             className="button button--flex transition duration-300 hover:scale-105"
             rel="noreferrer"
