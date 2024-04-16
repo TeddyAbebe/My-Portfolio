@@ -1,4 +1,5 @@
 import AKAN from "./images/AKAN.png";
+import GMJA from "./images/gmja.png";
 import NoteZipper from "./images/NoteZipper.png";
 import MyMusicApp from "./images/MusicHub.jpg";
 import Amazon from "./images/Amazon.jpg";
@@ -16,6 +17,16 @@ const Id = () => {
 };
 
 const portfolios = [
+  {
+    id: Id(),
+    imgUrl: GMJA,
+    category: "FullStack",
+    title: "GMJA Archive Website",
+    description:
+      "I developed the GMJA Archive website, which serves as a platform dedicated to preserving architectural legacies. The website encapsulates the passion of its founders for history, culture, and architectural heritage. It aims to document, preserve, and share invaluable architectural narratives, combating the threats posed by time, neglect, and development.",
+    technologies: ["React", "Tailwind CSS", "Node", "Express", "MongoDB"],
+    siteUrl: "https://gmja.et/",
+  },
   {
     id: Id(),
     imgUrl: AKAN,
