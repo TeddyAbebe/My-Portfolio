@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import "./portfolio.css";
 import portfolios from "../../assets/portfolioData";
 import Modal from "./Modal";
+import { CgSpinner } from "react-icons/cg";
 
 const Portfolio = () => {
   const [nextItems, setNextItems] = useState(6);
   const [showModal, setShowModal] = useState(false);
   const [activeID, setActiveID] = useState(null);
+  const [loading, setLoading] = useState(false); // Added loading state
 
   const loadMoreHandler = () => {
-    setNextItems((prev) => prev + 3);
+    setLoading(true); // Set loading to true
+    setTimeout(() => {
+      // Simulate network request delay
+      setNextItems((prev) => prev + 3);
+      setLoading(false); // Reset loading state
+    }, 1000); // Adjust delay as needed
   };
 
   const showModalHandler = (id) => {
@@ -33,17 +40,17 @@ const Portfolio = () => {
               data-aos="fade-zoom-in"
               data-aos-delay="50"
               data-aos-duration="1000"
-              className="group max-w-full sm:w-[48.5%] md:w-[31.8%] lg:w-[32.2%] relative z-[1] overflow-hidden object-contain  "
+              className="group max-w-full sm:w-[48.5%] md:w-[31.8%] lg:w-[32.2%] relative z-[1] overflow-hidden object-contain"
             >
               <figure>
                 <img className="rounded-[8px]" src={portfolio.imgUrl} alt="" />
               </figure>
 
-              <div className="w-full h-full bg-slate-700 bg-opacity-40 rounded-[8px] absolute top-0 left-0 z-[5] hidden group-hover:block ">
+              <div className="w-full h-full bg-slate-700 bg-opacity-40 rounded-[8px] absolute top-0 left-0 z-[5] hidden group-hover:block">
                 <div className="w-full h-full flex items-center justify-center">
                   <button
                     onClick={() => showModalHandler(portfolio.id)}
-                    className="text-white hover:text-black bg-black hover:bg-slate-200 py-2 px-4 rounded-[8px] font-serif font-bold ease-in duration-200 "
+                    className="text-white hover:text-black bg-black hover:bg-slate-200 py-2 px-4 rounded-[8px] font-serif font-bold ease-in duration-200"
                   >
                     See Details
                   </button>
@@ -57,9 +64,19 @@ const Portfolio = () => {
           {nextItems < portfolios.length && portfolios.length > 6 && (
             <button
               onClick={loadMoreHandler}
-              className="text-white bg-black hover:bg-slate-800 py-2 px-4 rounded-[8px] font-[500] font-serif ease-in duration-200 "
+              disabled={loading}
+              className={`relative text-white bg-black hover:bg-slate-800 py-2 px-4 rounded-[8px] font-[500] font-serif ease-in duration-200 ${
+                loading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             >
-              Load More...
+              {loading ? (
+                <div className="flex items-center justify-center">
+                  <CgSpinner className="animate-spin h-5 w-5 text-white" />
+                  <span className="ml-2">Loading...</span>
+                </div>
+              ) : (
+                "Load More..."
+              )}
             </button>
           )}
         </div>
