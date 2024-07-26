@@ -35,7 +35,8 @@ const portfolios = [
     description:
       "I work on a platform serves as a valuable resource for businesses and individuals alike, providing invaluable insights into customer behavior and optimizing their journey for enhanced satisfaction and success.",
     technologies: ["React", "Tailwind css"],
-    siteUrl: "https://akanpilot.co.uk/",
+    // siteUrl: "https://akanpilot.co.uk/",
+    siteUrl: "https://akandigital.netlify.app/",
     github: "https://github.com/TeddyAbebe/AKAN",
   },
 
