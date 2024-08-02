@@ -10,8 +10,6 @@ import Home from "./components/home/Home";
 import Portfolio from "./components/portfolio/Portfolio";
 import Qualification from "./components/qualification/Qualification";
 import Up from "./components/scrollup/Up";
-// import Services from "./components/services/Services";
-// import Qua from "./components/qualification/Qua";
 import Skills from "./components/skills/Skills";
 
 function App() {
@@ -26,8 +24,6 @@ function App() {
         <Home />
         <About />
         <Skills />
-        {/* <Services /> */}
-        {/* <Qua /> */}
         <Qualification />
         <Portfolio />
         <Contact />

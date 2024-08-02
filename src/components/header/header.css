@@ -24,7 +24,6 @@
 .nav__toggle {
   color: var(--title-color);
   font-weight: var(--font-medium);
-  /* border: 1px solid red; */
 }
 
 .nav__list {

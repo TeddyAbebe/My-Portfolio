@@ -22,8 +22,7 @@ const Qua = () => {
 
   return (
     <div className="">
-      <h2 className="section__title">Qualification</h2>
-      <span className="section__subtitle">My Personal Journey</span>
+      <h2 className="section__title mb-5 md:mb-10">Qualification</h2>
       <div className="flex justify-center">
         <div className="border-r p-5 border-black w-1/4 flex flex-col gap-5">
           <div
