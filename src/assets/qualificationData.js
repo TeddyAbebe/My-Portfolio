@@ -13,18 +13,22 @@ const qualificationData = {
   ],
   experience: [
     {
-      title: "React Developer",
+      title: "Frontend NextJs Developer",
+      company: "Kegeberew Technology Solution",
+      link: "https://kegeberewtech.com/",
+      date: "02/2024 - Present",
+    },
+    {
+      title: "Fullstack - MERN Developer",
+      company: "Addis Software",
+      link: "https://addissoftware.com/",
+      date: "10/2023 - 01/2024",
+    },
+    {
+      title: "Frontend ReactJs Developer",
       company: "DoWell Research",
-      date: "2022 - Present",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Freelance",
-      date: "2022 - Present",
-    },
-    {
-      title: "Fullstack Developer",
-      company: "Freelance",
+      link: "https://dowellresearch.uk/",
+      date: "02/2022 - 09/2023",
     },
   ],
 };
