@@ -20,7 +20,7 @@ const Qua = () => {
   };
 
   return (
-    <section className="section -mr-[3rem] sm:-mr-0" id="portfolio">
+    <section className="section -mr-[3rem] sm:-mr-0" id="qualification">
       <h2 className="section__title mb-5 md:mb-10">Qualification</h2>
 
       <div className="flex justify-center w-full">
@@ -76,19 +76,17 @@ const Qua = () => {
               ))}
             </div>
           ) : (
-            <div className="flex items-center justify-center hover:scale-105 cursor-pointer text-black duration-300 ease-in-out transition">
-              <img
-                src={Education}
-                alt=""
-                className="w-44 h-44 "
-                onClick={toggleEducation}
-              />
+            <div
+              className="flex items-center h-full justify-center hover:scale-105 cursor-pointer text-black duration-300 ease-in-out transition"
+              onClick={toggleEducation}
+            >
+              <img src={Education} alt="Education" className="w-60 h-60" />
             </div>
           )}
         </div>
 
         {/* Divider */}
-        <div className="border-2 border-black h-32 self-center rounded-full"></div>
+        <div className="border-2 border-black h-36 self-center rounded-full animate-bounce"></div>
 
         {/* Experience */}
         <div className="p-5 w-full border shadow-sm rounded-md sm:w-1/3 flex flex-col gap-5">
@@ -114,7 +112,7 @@ const Qua = () => {
             <div className="flex flex-col gap-5 w-full">
               {qualificationData.experience.map((exp, index) => (
                 <div
-                  className="flex items-start group cursor-pointer w-full"
+                  className="flex items-start group cursor-pointer w-full hover:bg-[#E7EBEE] p-5 rounded-md"
                   key={index}
                 >
                   <div className="relative pt-1">
@@ -142,13 +140,11 @@ const Qua = () => {
               ))}
             </div>
           ) : (
-            <div className="flex items-center justify-center hover:scale-105 cursor-pointer text-black duration-300 ease-in-out transition">
-              <img
-                src={Work}
-                alt=""
-                className="w-44 h-44 "
-                onClick={toggleExperience}
-              />
+            <div
+              className="flex items-center h-full justify-center hover:scale-105 cursor-pointer text-black duration-300 ease-in-out transition"
+              onClick={toggleExperience}
+            >
+              <img src={Work} alt="Experience" className="w-60 h-60" />
             </div>
           )}
         </div>

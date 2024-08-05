@@ -1,14 +1,19 @@
 const qualificationData = {
   education: [
     {
-      title: "Bachelor of Engineering",
-      institution: "Addis Ababa Institute",
+      title: "Bachelor of Software Engineering",
+      institution: "Addis Ababa Institute of Technology",
       date: "2018 - 2022",
     },
     {
       title: "Full Stack Web Development Program",
       institution: "Evangadi INC",
       date: "2020 - 2022",
+    },
+    {
+      title: "Advanced JavaScript and Modern Web Development",
+      institution: "Coursera",
+      date: "2020",
     },
   ],
   experience: [
