@@ -1,18 +1,21 @@
 const qualificationData = {
   education: [
     {
-      title: "Bachelor of Software Engineering",
+      title: "Bachelor of Engineering",
       institution: "Addis Ababa Institute of Technology",
+      link: "http://www.aait.edu.et/",
       date: "2018 - 2022",
     },
     {
       title: "Full Stack Web Development Program",
       institution: "Evangadi INC",
+      link: "https://www.evangadi.com/",
       date: "2020 - 2022",
     },
     {
       title: "Advanced JavaScript and Modern Web Development",
       institution: "Coursera",
+      link: "https://www.coursera.org/",
       date: "2020",
     },
   ],
@@ -24,7 +27,7 @@ const qualificationData = {
       date: "02/2024 - Present",
     },
     {
-      title: "Fullstack - MERN Developer",
+      title: "Full Stack - MERN Developer",
       company: "Addis Software",
       link: "https://addissoftware.com/",
       date: "10/2023 - 01/2024",
