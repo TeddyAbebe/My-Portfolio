@@ -2,10 +2,10 @@ import AKAN from "./images/AKAN.png";
 import GMJA from "./images/gmja.png";
 import NoteZipper from "./images/NoteZipper.png";
 import MyMusicApp from "./images/MusicHub.jpg";
-import Amazon from "./images/Amazon.jpg";
-import Netflix from "./images/Netflix.jpg";
-import Apple from "./images/Apple.jpg";
-import Zoom from "./images/Zoom.jpg";
+// import Amazon from "./images/Amazon.jpg";
+// import Netflix from "./images/Netflix.jpg";
+// import Apple from "./images/Apple.jpg";
+// import Zoom from "./images/Zoom.jpg";
 import InstaVerse from "./images/InstaVerse.jpg";
 import EvoGym from "./images/EvoGym.png";
 import Chat from "./images/chitchat.jpg";
@@ -106,53 +106,53 @@ const portfolios = [
     github: "https://github.com/TeddyAbebe/InstaVerse_Client",
   },
 
-  {
-    id: Id(),
-    imgUrl: Netflix,
-    category: "Front-End",
-    title: "Netflix Website Clone",
-    description:
-      "Netflix-clone using react which is an online video streaming services.",
-    technologies: ["React", "TMBD-Movie", "Redux Toolkit", "Redux-Saga"],
-    siteUrl: "https://t-netflix-clone.netlify.app/",
-    github: "https://github.com/TeddyAbebe/Netflix-Client",
-  },
+  // {
+  //   id: Id(),
+  //   imgUrl: Netflix,
+  //   category: "Front-End",
+  //   title: "Netflix Website Clone",
+  //   description:
+  //     "Netflix-clone using react which is an online video streaming services.",
+  //   technologies: ["React", "TMBD-Movie", "Redux Toolkit", "Redux-Saga"],
+  //   siteUrl: "https://t-netflix-clone.netlify.app/",
+  //   github: "https://github.com/TeddyAbebe/Netflix-Client",
+  // },
 
-  {
-    id: Id(),
-    imgUrl: Amazon,
-    category: "Full-Stack",
-    title: "Amazon Website Clone",
-    description:
-      "Amazon-clone app using react which is an e-commerce store with full functionality, front and back end.",
-    technologies: ["React", "Node.js", "Firebase"],
-    siteUrl: "https://aug-bc35b.firebaseapp.com/",
-    github: "https://github.com/TeddyAbebe/Amazon-Clone",
-  },
+  // {
+  //   id: Id(),
+  //   imgUrl: Amazon,
+  //   category: "Full-Stack",
+  //   title: "Amazon Website Clone",
+  //   description:
+  //     "Amazon-clone app using react which is an e-commerce store with full functionality, front and back end.",
+  //   technologies: ["React", "Node.js", "Firebase"],
+  //   siteUrl: "https://aug-bc35b.firebaseapp.com/",
+  //   github: "https://github.com/TeddyAbebe/Amazon-Clone",
+  // },
 
-  {
-    id: Id(),
-    imgUrl: Apple,
-    category: "Front-End",
-    title: "Apple Website Clone",
-    description:
-      "Apple’s current website using React - created React components for various pages and sections - Integrated Apple’s YouTube channel with the website using REST API",
-    technologies: ["React", "Bootstrap", "Node.js"],
-    siteUrl: "https://apple-clone-135e7.web.app/",
-    github: "https://github.com/TeddyAbebe/Apple-Website-Replica-by-React",
-  },
+  // {
+  //   id: Id(),
+  //   imgUrl: Apple,
+  //   category: "Front-End",
+  //   title: "Apple Website Clone",
+  //   description:
+  //     "Apple’s current website using React - created React components for various pages and sections - Integrated Apple’s YouTube channel with the website using REST API",
+  //   technologies: ["React", "Bootstrap", "Node.js"],
+  //   siteUrl: "https://apple-clone-135e7.web.app/",
+  //   github: "https://github.com/TeddyAbebe/Apple-Website-Replica-by-React",
+  // },
 
-  {
-    id: Id(),
-    imgUrl: Zoom,
-    category: "Back-End",
-    title: "Zoom Clone",
-    description:
-      "Authored Zoom replica using Node.js. so that two or more users can go online and meet face to face.",
-    technologies: ["Socket.io", "Node.js"],
-    siteUrl: "#",
-    github: "https://github.com/TeddyAbebe/ZoomClone",
-  },
+  // {
+  //   id: Id(),
+  //   imgUrl: Zoom,
+  //   category: "Back-End",
+  //   title: "Zoom Clone",
+  //   description:
+  //     "Authored Zoom replica using Node.js. so that two or more users can go online and meet face to face.",
+  //   technologies: ["Socket.io", "Node.js"],
+  //   siteUrl: "#",
+  //   github: "https://github.com/TeddyAbebe/ZoomClone",
+  // },
 ];
 
 export default portfolios;
