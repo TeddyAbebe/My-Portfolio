@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import portfolios from "../../assets/portfolioData";
 
 const Modal = ({ activeID, setShowModal }) => {
   const portfolio = portfolios.find((portfolio) => portfolio.id === activeID);
+
+  const modalRef = useRef(null);
+
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      setShowModal(false);
+    }
+  };
+
+  window.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    window.removeEventListener("mousedown", handleClickOutside);
+  };
+}, [setShowModal]);
+
+
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="w-full h-full fixed top-0 left-0 bg-black bg-opacity-30 z-40"></div>
 
       <div className="w-full h-full flex items-center justify-center z-50">
-        <div className=" mx-6 w-[600px] rounded-xl bg-white py-2 flex flex-col justify-center items-center gap-2 relative z-50">
+        <div
+          ref={modalRef}
+          className="mx-6 w-[600px] rounded-xl bg-white py-2 flex flex-col justify-center items-center gap-2 relative z-50"
+        >
           <div className="w-[40%]">
             <figure>
               <img className="rounded-[8px]" src={portfolio.imgUrl} alt="" />

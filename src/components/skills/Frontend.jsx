@@ -1,6 +1,12 @@
 import React from "react";
 import { FaJs, FaReact, FaVuejs } from "react-icons/fa";
-import { SiNextdotjs, SiNuxtdotjs, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si";
+import {
+  SiNextdotjs,
+  SiNuxtdotjs,
+  SiShadcnui,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 
 const Frontend = () => {
   return (
