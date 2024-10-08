@@ -37,7 +37,7 @@ const Contact = () => {
 
           <div className="contact__info">
             <div className="contact__card">
-              <i className="bx bx-mail-send contact__card-icon"></i>
+              <i className="bx bx-mail-send contact__card-icon animate-bounce"></i>
 
               <h3 className="contact__card-title">Email</h3>
 
@@ -56,7 +56,7 @@ const Contact = () => {
             </div>
 
             <div className="contact__card">
-              <i className="bx bx-phone contact__card-icon"></i>
+              <i className="bx bx-phone contact__card-icon animate-bounce"></i>
 
               <h3 className="contact__card-title">Phone No.</h3>
 
@@ -112,7 +112,7 @@ const Contact = () => {
             <button className="button button--flex transition duration-300 hover:scale-105 font-serif">
               Send Message
               <svg
-                class="button__icon"
+                class="button__icon animate-pulse"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"

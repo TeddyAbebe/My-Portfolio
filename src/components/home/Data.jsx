@@ -20,7 +20,7 @@ const Data = () => {
       >
         Say Hello
         <svg
-          class="button__icon"
+          class="button__icon animate-pulse"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
