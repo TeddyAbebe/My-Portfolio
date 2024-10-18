@@ -17,7 +17,7 @@ export const About = () => {
                 <p>{val.desc}</p>
                 <p>{val.desc1}</p>
                 <a
-                  href="https://drive.google.com/file/d/18VY3mlNv3W9Zy7B_QwDIdjQhf2aXWfur/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1MBPtY82EKFZ_iI0ElVolNdlojQA7Cg6A/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
