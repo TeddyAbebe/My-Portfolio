@@ -6,20 +6,19 @@ const Modal = ({ activeID, setShowModal }) => {
 
   const modalRef = useRef(null);
 
-useEffect(() => {
-  const handleClickOutside = (event) => {
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      setShowModal(false);
-    }
-  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setShowModal(false);
+      }
+    };
 
-  window.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("mousedown", handleClickOutside);
 
-  return () => {
-    window.removeEventListener("mousedown", handleClickOutside);
-  };
-}, [setShowModal]);
-
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setShowModal]);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -40,18 +39,21 @@ useEffect(() => {
             <h2 className="font-serif underline">{portfolio.title}</h2>
             <p className="text-sm">{portfolio.description}</p>
 
-            <div className="mt-5 flex items-center gap-y-1 gap-x-2 flex-wrap">
-              <h4 className="font-serif text-black text-[18px] text-[700]">
+            <div className="mt-5 flex items-center">
+              <h4 className="font-serif text-black w-1/3 text-[18px] text-[700]">
                 Technologies :
               </h4>
-              {portfolio.technologies.map((item, index) => (
-                <span
-                  key={index}
-                  className="bg-gray-200 py-1 px-2 rounded-[5px] text-[14px] leading-0"
-                >
-                  {item}
-                </span>
-              ))}
+
+              <div className="grid grid-cols-3 w-full">
+                {portfolio.technologies.map((item, index) => (
+                  <span
+                    key={index}
+                    className="bg-gray-200 flex justify-center items-center text-center rounded-md h-12 px-1 py-1 text-sm hover:bg-gray-300 cursor-pointer"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div className="flex items-end gap-5">

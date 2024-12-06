@@ -1,5 +1,6 @@
 import AKAN from "./images/AKAN.png";
 import GMJA from "./images/gmja.png";
+import Klimate from "./images/klimate.png";
 import NoteZipper from "./images/NoteZipper.png";
 import MyMusicApp from "./images/MusicHub.jpg";
 // import Amazon from "./images/Amazon.jpg";
@@ -17,6 +18,24 @@ const Id = () => {
 };
 
 const portfolios = [
+  {
+    id: Id(),
+    imgUrl: Klimate,
+    category: "Frontend",
+    title: "Klimate Weather Tracking",
+    description:
+      "Kli-Mate is a sleek and intuitive weather app designed to provide real-time weather updates and insights. Built with modern technologies like TanStack Query for efficient data fetching, ShadCN for beautiful UI components, Recharts for dynamic data visualizations, and styled with Tailwind CSS, the app delivers a seamless user experience. Powered by TypeScript, it ensures robust type safety and performance",
+    technologies: [
+      "React",
+      "Tanstack Query",
+      "Typescript",
+      "TailwindCSS",
+      "ShadCn",
+      "Recharts",
+    ],
+    siteUrl: "https://kli-mate.netlify.app/",
+    github: "https://github.com/TeddyAbebe/Klimate",
+  },
   {
     id: Id(),
     imgUrl: GMJA,
@@ -59,7 +78,7 @@ const portfolios = [
     title: "EvoGym Website",
     description:
       "Designed and developed the official website for EvoGym, a local fitness center dedicated to transforming lives through health and wellness. The website showcases class information, membership plans, and a user-friendly interface to support fitness enthusiasts on their journey to a healthier lifestyle.",
-    technologies: ["Vite-React", "TypeScript", "TailwindCSS"],
+    technologies: ["React", "TypeScript", "TailwindCSS"],
     siteUrl: "https://evolgym.netlify.app/",
     github: "https://github.com/TeddyAbebe/Gym",
   },
@@ -84,7 +103,7 @@ const portfolios = [
     description:
       "I've created a Full Stack Music Management App using the MERN stack. It allows users to save their favorite playlist, and provides insightful music statistics. The backend uses ExpressJS and MongoDB, while the frontend is built with ReactJS and Redux.",
     technologies: [
-      "Vite-React",
+      "React",
       "Typescript",
       "Styled-Component",
       "Redux Toolkit",

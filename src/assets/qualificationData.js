@@ -22,21 +22,27 @@ const qualificationData = {
   experience: [
     {
       title: "Frontend NextJs Developer",
-      company: "Kegeberew Technology Solution",
-      link: "https://kegeberewtech.com/",
-      date: "02/2024 - Present",
+      company: "Eagle Lion System Technology",
+      link: "https://www.eaglelionsystems.com/",
+      date: "11/2024 - Present",
     },
     {
-      title: "Full Stack - MERN Developer",
-      company: "Addis Software",
-      link: "https://addissoftware.com/",
-      date: "10/2023 - 01/2024",
+      title: "Frontend NextJs Developer",
+      company: "Kegeberew Technology Solution",
+      link: "https://kegeberewtech.com/",
+      date: "02/2024 - 10/2024",
     },
     {
       title: "Frontend ReactJs Developer",
       company: "DoWell Research",
       link: "https://dowellresearch.uk/",
-      date: "02/2022 - 09/2023",
+      date: "07/2022 - 12/2023",
+    },
+    {
+      title: "Full Stack - MERN Developer",
+      company: "Addis Software",
+      link: "https://addissoftware.com/",
+      date: "02/2023 - 06/2023",
     },
   ],
 };

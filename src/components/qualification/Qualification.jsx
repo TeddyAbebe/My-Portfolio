@@ -132,6 +132,8 @@ const Qualification = () => {
 
                     <a
                       href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-sm sm:text-base text-black hover:underline hover:text-blue-800 underline-offset-2"
                     >
                       {exp.company}
