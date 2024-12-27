@@ -35,12 +35,12 @@ const Modal = ({ activeID, setShowModal }) => {
             </figure>
           </div>
 
-          <div className="px-10 flex flex-col">
+          <div className="px-5 text-justify sm:px-10 flex flex-col">
             <h2 className="font-serif underline">{portfolio.title}</h2>
             <p className="text-sm">{portfolio.description}</p>
 
-            <div className="mt-5 flex items-center">
-              <h4 className="font-serif text-black w-1/3 text-[18px] text-[700]">
+            <div className="mt-5 flex flex-col sm:flex-row items-center">
+              <h4 className="font-serif text-black sm:w-1/3 text-[18px] text-[700]">
                 Technologies :
               </h4>
 
@@ -48,7 +48,7 @@ const Modal = ({ activeID, setShowModal }) => {
                 {portfolio.technologies.map((item, index) => (
                   <span
                     key={index}
-                    className="bg-gray-200 flex justify-center items-center text-center rounded-md h-12 px-1 py-1 text-sm hover:bg-gray-300 cursor-pointer"
+                    className="bg-gray-200 flex justify-center items-center text-center rounded-md w-full h-12 px-1 py-1 text-xs sm:text-sm hover:bg-gray-300 cursor-pointer font-bold"
                   >
                     {item}
                   </span>

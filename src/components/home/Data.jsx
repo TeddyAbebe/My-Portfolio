@@ -12,7 +12,7 @@ const Data = () => {
       <p className="home__description">
         Motivated and dynamic Web Developer with a keen focus and experience in
         web application development, with a strong work ethic and innate ability
-        to adapt in ever-changing and challenging environments.
+        to adapt in ever changing and challenging environments.
       </p>
       <a
         href="#contact"
