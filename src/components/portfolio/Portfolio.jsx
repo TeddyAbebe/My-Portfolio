@@ -4,7 +4,7 @@ import { FiArrowDown, FiArrowRight, FiZoomIn } from "react-icons/fi";
 import portfolios from "../../assets/portfolioData";
 import Modal from "./Modal";
 import { FaGithub } from "react-icons/fa";
-import { MdArrowForward, MdOpenInNew } from "react-icons/md";
+import { MdOpenInNew } from "react-icons/md";
 
 const Portfolio = () => {
   const [visibleItems, setVisibleItems] = useState(6);
