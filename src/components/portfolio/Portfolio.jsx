@@ -1,89 +1,197 @@
 import React, { useState } from "react";
-import "./portfolio.css";
+import { CgSpinner } from "react-icons/cg";
+import { FiArrowDown, FiArrowRight, FiZoomIn } from "react-icons/fi";
 import portfolios from "../../assets/portfolioData";
 import Modal from "./Modal";
-import { CgSpinner } from "react-icons/cg";
+import { FaGithub } from "react-icons/fa";
+import { MdArrowForward, MdOpenInNew } from "react-icons/md";
 
 const Portfolio = () => {
-  const [nextItems, setNextItems] = useState(6);
-  const [showModal, setShowModal] = useState(false);
-  const [activeID, setActiveID] = useState(null);
-  const [loading, setLoading] = useState(false); // Added loading state
+  const [visibleItems, setVisibleItems] = useState(6);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activePortfolioId, setActivePortfolioId] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const loadMoreHandler = () => {
-    setLoading(true); // Set loading to true
+  const handleLoadMore = () => {
+    setIsLoading(true);
     setTimeout(() => {
-      // Simulate network request delay
-      setNextItems((prev) => prev + 3);
-      setLoading(false); // Reset loading state
-    }, 1000); // Adjust delay as needed
+      setVisibleItems((prev) => prev + 3);
+      setIsLoading(false);
+    }, 1000);
   };
 
-  const showModalHandler = (id) => {
-    setShowModal(true);
-    setActiveID(id);
+  const openModal = (id) => {
+    setActivePortfolioId(id);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setActivePortfolioId(null);
   };
 
   return (
-    <section className="section" id="portfolio">
-      <h2 className="section__title">Projects</h2>
-      <span className="section__subtitle">Recent projects</span>
-      <div className="container">
-        <div className="flex items-center justify-between flex-wrap">
-          <div className="mb-7 sm:mb-0"></div>
-        </div>
+    <section id="portfolio" className="py-12 bg-gray-10">
+      <div className="container mx-auto px-4">
+        <header className="text-center mb-10">
+          <h2
+            className="text-3xl font-bold text-gray-900 tracking-tight"
+            data-aos="fade-down"
+            data-aos-duration="800"
+          >
+            Projects
+          </h2>
+          <p
+            className="text-lg text-gray-600 mt-2"
+            data-aos="fade-down"
+            data-aos-delay="200"
+            data-aos-duration="800"
+          >
+            Recent Creations
+          </p>
+        </header>
 
-        <div className="flex items-center gap-4 flex-wrap">
-          {portfolios?.slice(0, nextItems)?.map((portfolio, index) => (
-            <div
-              key={index}
-              data-aos="fade-zoom-in"
-              data-aos-delay="50"
-              data-aos-duration="1000"
-              className="group max-w-full sm:w-[48.5%] md:w-[31.8%] lg:w-[32.2%] relative z-[1] overflow-hidden object-contain"
-            >
-              <figure>
-                <img className="rounded-[8px]" src={portfolio.imgUrl} alt="" />
-              </figure>
-
-              <div className="w-full h-full bg-slate-700 bg-opacity-40 rounded-[8px] absolute top-0 left-0 z-[5] hidden group-hover:block">
-                <div className="w-full h-full flex items-center justify-center">
-                  <button
-                    onClick={() => showModalHandler(portfolio.id)}
-                    className="text-white hover:text-black bg-black hover:bg-slate-200 py-2 px-4 rounded-[8px] font-serif font-bold ease-in duration-200"
-                  >
-                    See Details
-                  </button>
-                </div>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+          {portfolios.slice(0, visibleItems).map((portfolio, index) => (
+            <PortfolioCard
+              key={portfolio.id}
+              portfolio={portfolio}
+              onClick={openModal}
+              index={index}
+            />
           ))}
         </div>
 
-        <div className="text-center mt-6">
-          {nextItems < portfolios.length && portfolios.length > 6 && (
+        {portfolios.length > 0 && visibleItems < portfolios.length && (
+          <div className="text-center mt-10">
             <button
-              onClick={loadMoreHandler}
-              disabled={loading}
-              className={`relative text-white bg-black hover:bg-slate-800 py-2 px-4 rounded-[8px] font-[500] font-serif ease-in duration-200 ${
-                loading ? "opacity-50 cursor-not-allowed" : ""
-              }`}
+              onClick={handleLoadMore}
+              disabled={isLoading}
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 text-sm font-medium rounded-full shadow-sm hover:from-gray-300 hover:to-gray-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? (
-                <div className="flex items-center justify-center">
-                  <CgSpinner className="animate-spin h-5 w-5 text-white" />
-                  <span className="ml-2">Loading...</span>
-                </div>
+              {isLoading ? (
+                <>
+                  <CgSpinner className="animate-spin h-5 w-5 mr-2" />
+                  Loading...
+                </>
               ) : (
-                "Load More..."
+                <>
+                  Load More
+                  <FiArrowDown className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </>
               )}
             </button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
-      {showModal && <Modal setShowModal={setShowModal} activeID={activeID} />}
+
+      {isModalOpen && (
+        <Modal
+          portfolio={portfolios.find((p) => p.id === activePortfolioId)}
+          onClose={closeModal}
+        />
+      )}
     </section>
   );
 };
+
+const PortfolioCard = ({ portfolio, onClick, index }) => (
+  <div
+    data-aos="fade-up"
+    data-aos-delay={index * 100}
+    data-aos-duration="600"
+    className="bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-transparent hover:border-gray-300 flex flex-col justify-between overflow-hidden"
+  >
+    <div>
+      <div className="w-full h-52 overflow-hidden">
+        <img
+          src={portfolio.imgUrl}
+          alt={portfolio.title || "Portfolio"}
+          className="w-full h-auto object-top object-contain rounded-md"
+        />
+      </div>
+
+      {/* Details*/}
+      <div className="p-6 flex flex-col justify-between">
+        <h3 className="text-lg font-semibold text-gray-900 mb-1 flex items-center">
+          <span className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
+          {portfolio.title || "Project"}
+        </h3>
+
+        <p className="text-base font-medium text-gray-700 mb-1">
+          {portfolio.category}
+        </p>
+
+        <p className="text-sm text-gray-600 leading-6 mb-2 line-clamp-1">
+          {portfolio.description}
+        </p>
+
+        {/* Technologies */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          {portfolio.technologies?.map((tech, i) => (
+            <span
+              key={index}
+              className="relative flex items-center justify-center px-2.5 py-1 text-xs text-center rounded-lg bg-gradient-to-r from-blue-100 to-blue-200 font-medium text-blue-800 shadow-sm hover:shadow-md hover:from-blue-200 hover:to-blue-300 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div className="flex flex-wrap justify-center items-center gap-3">
+      <div className="relative group">
+        <a
+          href={portfolio.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden"
+          aria-label="View on GitHub"
+        >
+          <FaGithub className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+          <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+        </a>
+        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs font-medium text-white bg-blue-600 rounded-lg shadow-sm whitespace-nowrap">
+          View on GitHub
+          <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-blue-600"></span>
+        </span>
+      </div>
+
+      <button
+        onClick={() => onClick(portfolio.id)}
+        className="relative inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 text-sm font-medium rounded-full shadow-sm hover:from-blue-100 hover:to-blue-200 hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden group"
+      >
+        <span className="relative z-10 flex items-center">
+          View Details
+          <FiArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </span>
+        <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+      </button>
+
+      {portfolio.siteUrl && (
+        <div className="relative group">
+          <a
+            href={portfolio.siteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden"
+            aria-label="Visit Live Site"
+          >
+            <MdOpenInNew className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+            <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+          </a>
+          {/* Tooltip */}
+          <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs font-medium text-white bg-blue-600 rounded-lg shadow-sm whitespace-nowrap">
+            Visit Live Site
+            {/* Tooltip Arrow */}
+            <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-blue-600"></span>
+          </span>
+        </div>
+      )}
+    </div>
+  </div>
+);
 
 export default Portfolio;

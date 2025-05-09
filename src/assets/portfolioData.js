@@ -10,6 +10,8 @@ import MyMusicApp from "./images/MusicHub.jpg";
 import InstaVerse from "./images/InstaVerse.jpg";
 import EvoGym from "./images/EvoGym.png";
 import Chat from "./images/chitchat.jpg";
+import Sheko from "./images/Sheko.PNG";
+import Mission from "./images/Mission180.PNG";
 
 let idCounter = 0;
 
@@ -18,6 +20,28 @@ const Id = () => {
 };
 
 const portfolios = [
+  {
+    id: Id(),
+    imgUrl: Sheko,
+    category: "Frontend",
+    title: "Sheko Coffee",
+    description:
+      "Sheko Coffee is an elegant e-commerce platform promoting premium Ethiopian coffee from the Sheko region — the birthplace of Arabica beans. The site offers detailed insights into the region’s coffee heritage, cultivation practices, and sustainability efforts, all wrapped in a clean, modern interface built with React and TailwindCSS.",
+    technologies: ["React", "TailwindCSS", "Framer Motion"],
+    siteUrl: "https://www.shekocoffee.com/",
+    github: "https://github.com/TeddyAbebe/Sheko",
+  },
+  {
+    id: Id(),
+    imgUrl: Mission,
+    category: "Frontend",
+    title: "Mission 180",
+    description:
+      "Mission 180 is a compassionate and impactful website dedicated to supporting orphaned and vulnerable children around the world. Built for a non-profit organization. With a heartfelt design and clear call-to-actions, it encourages community involvement and showcases the global impact of everyday kindness.",
+    technologies: ["React", "Typescript", "TailwindCSS"],
+    siteUrl: "https://mission180.netlify.app/",
+    github: "https://github.com/TeddyAbebe/mission180",
+  },
   {
     id: Id(),
     imgUrl: Klimate,

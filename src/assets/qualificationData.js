@@ -21,10 +21,16 @@ const qualificationData = {
   ],
   experience: [
     {
+      title: "Frontend ReactJS & NextJs Developer",
+      company: "Convex Technology",
+      link: "https://convexict.com/",
+      date: "2/2024 - Present",
+    },
+    {
       title: "Frontend NextJs Developer",
       company: "Eagle Lion System Technology",
       link: "https://www.eaglelionsystems.com/",
-      date: "11/2024 - Present",
+      date: "11/2024 - 2/2025",
     },
     {
       title: "Frontend NextJs Developer",
