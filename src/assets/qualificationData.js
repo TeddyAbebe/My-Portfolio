@@ -77,7 +77,7 @@ const qualificationData = {
     },
     {
       title: "Frontend NextJs Developer",
-      company: "Kegeberew Technology Solution (KTS)",
+      company: "Kegeberew Technology Solution",
       link: "https://kegeberewtech.com/",
       date: "2/2024 - 9/2024",
       techStack: [

@@ -95,7 +95,7 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
     className="bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-transparent hover:border-teal-200 flex flex-col justify-between overflow-hidden"
   >
     <div>
-      <div className="w-full h-52 overflow-hidden">
+      <div className="w-full h-36 sm:h-52 overflow-hidden">
         <img
           src={portfolio.imgUrl}
           alt={portfolio.title || "Portfolio"}
@@ -107,6 +107,7 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
       <div className="p-6 flex flex-col justify-between">
         <h3 className="text-lg font-semibold text-gray-900 mb-1 flex items-center">
           <span className="w-2 h-2 bg-teal-500 rounded-full mr-2" />
+
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400">
             {portfolio.title || "Project"}
           </span>
@@ -147,6 +148,7 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
           <FaGithub className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
           <span className="absolute inset-0 bg-teal-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
         </a>
+
         <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs font-medium text-white bg-teal-600 rounded-lg shadow-sm whitespace-nowrap">
           View on GitHub
           <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-teal-600"></span>

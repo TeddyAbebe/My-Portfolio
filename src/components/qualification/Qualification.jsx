@@ -206,7 +206,7 @@ const Qualification = () => {
                                   return (
                                     <motion.div
                                       key={techIndex}
-                                      className="relative group/tech h-5 w-5 sm:h-6 sm:w-6 p-1"
+                                      className="relative group/tech h-6 w-6 sm:h-7 sm:w-7 p-1"
                                       whileHover={{ scale: 1.2 }}
                                       transition={{
                                         type: "spring",
