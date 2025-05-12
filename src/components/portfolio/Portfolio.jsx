@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CgSpinner } from "react-icons/cg";
-import { FiArrowDown, FiArrowRight, FiZoomIn } from "react-icons/fi";
+import { FiArrowDown, FiArrowRight } from "react-icons/fi";
 import portfolios from "../../assets/portfolioData";
 import Modal from "./Modal";
 import { FaGithub } from "react-icons/fa";
@@ -39,7 +39,6 @@ const Portfolio = () => {
             data-aos="fade-down"
             data-aos-duration="800"
           >
-            {" "}
             Projects
           </h2>
         </header>
@@ -93,7 +92,7 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
     data-aos="fade-up"
     data-aos-delay={index * 100}
     data-aos-duration="600"
-    className="bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-transparent hover:border-gray-300 flex flex-col justify-between overflow-hidden"
+    className="bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-transparent hover:border-teal-200 flex flex-col justify-between overflow-hidden"
   >
     <div>
       <div className="w-full h-52 overflow-hidden">
@@ -104,11 +103,13 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
         />
       </div>
 
-      {/* Details*/}
+      {/* Details */}
       <div className="p-6 flex flex-col justify-between">
         <h3 className="text-lg font-semibold text-gray-900 mb-1 flex items-center">
-          <span className="w-2 h-2 bg-blue-500 rounded-full mr-2" />
-          {portfolio.title || "Project"}
+          <span className="w-2 h-2 bg-teal-500 rounded-full mr-2" />
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400">
+            {portfolio.title || "Project"}
+          </span>
         </h3>
 
         <p className="text-base font-medium text-gray-700 mb-1">
@@ -123,8 +124,8 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
         <div className="flex flex-wrap gap-2 mb-3">
           {portfolio.technologies?.map((tech, i) => (
             <span
-              key={index}
-              className="relative flex items-center justify-center px-2.5 py-1 text-xs text-center rounded-lg bg-gradient-to-r from-blue-100 to-blue-200 font-medium text-blue-800 shadow-sm hover:shadow-md hover:from-blue-200 hover:to-blue-300 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              key={i}
+              className="relative flex items-center justify-center px-2.5 py-1 text-xs text-center rounded-lg bg-gradient-to-r from-teal-100 to-teal-200 font-medium text-teal-800 shadow-sm hover:shadow-md hover:from-teal-200 hover:to-teal-300 transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {tech}
@@ -140,27 +141,27 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
           href={portfolio.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden"
+          className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:bg-teal-50 hover:border-teal-300 hover:text-teal-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 overflow-hidden"
           aria-label="View on GitHub"
         >
           <FaGithub className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-          <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+          <span className="absolute inset-0 bg-teal-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
         </a>
-        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs font-medium text-white bg-blue-600 rounded-lg shadow-sm whitespace-nowrap">
+        <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs font-medium text-white bg-teal-600 rounded-lg shadow-sm whitespace-nowrap">
           View on GitHub
-          <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-blue-600"></span>
+          <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-teal-600"></span>
         </span>
       </div>
 
       <button
         onClick={() => onClick(portfolio.id)}
-        className="relative inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 text-sm font-medium rounded-full shadow-sm hover:from-blue-100 hover:to-blue-200 hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden group"
+        className="relative inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800 text-sm font-medium rounded-full shadow-sm hover:from-blue-100 hover:to-teal-200 hover:text-teal-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 overflow-hidden group"
       >
         <span className="relative z-10 flex items-center">
           View Details
           <FiArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </span>
-        <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+        <span className="absolute inset-0 bg-teal-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
       </button>
 
       {portfolio.siteUrl && (
@@ -169,17 +170,15 @@ const PortfolioCard = ({ portfolio, onClick, index }) => (
             href={portfolio.siteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:bg-blue-50 hover:border-blue-300 hover:text-blue-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 overflow-hidden"
+            className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm hover:shadow-md hover:bg-teal-50 hover:border-teal-300 hover:text-teal-600 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 overflow-hidden"
             aria-label="Visit Live Site"
           >
             <MdOpenInNew className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-            <span className="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+            <span className="absolute inset-0 bg-teal-100 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
           </a>
-          {/* Tooltip */}
-          <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs font-medium text-white bg-blue-600 rounded-lg shadow-sm whitespace-nowrap">
+          <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block px-2 py-1 text-xs font-medium text-white bg-teal-600 rounded-lg shadow-sm whitespace-nowrap">
             Visit Live Site
-            {/* Tooltip Arrow */}
-            <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-blue-600"></span>
+            <span className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-teal-600"></span>
           </span>
         </div>
       )}

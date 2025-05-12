@@ -20,7 +20,6 @@ import Tilt from "react-parallax-tilt";
 import qualificationData from "../../assets/qualificationData";
 import { TiStar } from "react-icons/ti";
 
-// Map icon names to their corresponding react-icons components and brand colors
 const iconMap = {
   SiReact: { component: SiReact, color: "#61DAFB" }, // React
   SiNextdotjs: { component: SiNextdotjs, color: "#000000" }, // Next.js
@@ -80,7 +79,7 @@ const Qualification = () => {
   return (
     <section
       id="qualification"
-      className="section -mr-[3rem] sm:-mr-0 border border-black"
+      className="section -mr-[3rem] sm:-mr-0"
     >
       {/* Parallax Background with Subtle Pattern */}
       <div className="absolute inset-0 pointer-events-none">
@@ -96,7 +95,7 @@ const Qualification = () => {
           transition={{ duration: 0.8 }}
           className="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-10 sm:mb-12 tracking-tight"
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">
+          <span className="bg-clip-text text-transparent section__title mb-5 md:mb-10">
             My Journey
           </span>
         </motion.h2>
