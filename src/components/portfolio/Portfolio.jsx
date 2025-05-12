@@ -35,20 +35,13 @@ const Portfolio = () => {
       <div className="container mx-auto px-4">
         <header className="text-center mb-10">
           <h2
-            className="text-3xl font-bold text-gray-900 tracking-tight"
+            className="section__title mb-5 md:mb-10"
             data-aos="fade-down"
             data-aos-duration="800"
           >
+            {" "}
             Projects
           </h2>
-          <p
-            className="text-lg text-gray-600 mt-2"
-            data-aos="fade-down"
-            data-aos-delay="200"
-            data-aos-duration="800"
-          >
-            Recent Creations
-          </p>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">

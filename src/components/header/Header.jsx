@@ -106,7 +106,7 @@ const Header = () => {
             >
               <a href="#qualification" className="nav__link flex items-center">
                 <i className="uil uil-graduation-cap nav__icon mr-2"></i>
-                Qualification
+                Experience
                 <span
                   className={`group-hover:scale-x-100 absolute bottom-0 left-1/2 -translate-x-1/2 md:-translate-x-0 md:left-0 w-1/2 md:w-full h-[2px] rounded-full bg-current transform scale-x-0 transition-transform duration-300 ${
                     activeSection === "qualification" ? "scale-x-100" : ""
@@ -122,7 +122,7 @@ const Header = () => {
             >
               <a href="#portfolio" className="nav__link flex items-center">
                 <i className="uil uil-scenery nav__icon mr-2"></i>
-                Portfolio
+                Projects
                 <span
                   className={`group-hover:scale-x-100 absolute bottom-0 left-1/2 -translate-x-1/2 md:-translate-x-0 md:left-0 w-1/2 md:w-full h-[2px] rounded-full bg-current transform scale-x-0 transition-transform duration-300 ${
                     activeSection === "portfolio" ? "scale-x-100" : ""

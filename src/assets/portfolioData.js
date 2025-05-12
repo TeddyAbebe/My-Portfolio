@@ -69,6 +69,7 @@ const portfolios = [
       "I developed the GMJA Archive website, which serves as a platform dedicated to preserving architectural legacies. The website encapsulates the passion of its founders for history, culture, and architectural heritage. It aims to document, preserve, and share invaluable architectural narratives, combating the threats posed by time, neglect, and development.",
     technologies: ["React", "Tailwind CSS", "Node", "Express", "MongoDB"],
     siteUrl: "https://gmja.et/",
+    github: "https://github.com/TeddyAbebe/Gmja-Arch-Hive",
   },
   {
     id: Id(),
