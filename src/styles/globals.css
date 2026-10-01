@@ -1,0 +1,362 @@
+/*=============== THEME TOKENS ===============*/
+/* Colors are stored as RGB channels so Tailwind can apply opacity modifiers. */
+:root {
+  --c-bg: 239 243 242;
+  --c-surface: 248 250 249;
+  --c-surface-2: 231 237 235;
+  --c-heading: 15 23 42;
+  --c-body: 71 85 105;
+  --c-muted: 100 116 139;
+  --c-border: 218 226 224;
+  --c-border-strong: 196 208 205;
+  --c-accent: 13 148 136;
+  --c-accent-2: 8 145 178;
+  --c-accent-soft: 204 251 241;
+  --c-on-accent: 255 255 255;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04),
+    0 8px 24px -12px rgb(15 23 42 / 0.12);
+  --shadow-card-hover: 0 20px 40px -20px rgb(var(--c-accent) / 0.35);
+}
+
+.dark {
+  --c-bg: 7 11 20;
+  --c-surface: 15 23 36;
+  --c-surface-2: 24 34 52;
+  --c-heading: 241 245 249;
+  --c-body: 148 163 184;
+  --c-muted: 100 116 139;
+  --c-border: 30 41 59;
+  --c-border-strong: 51 65 85;
+  --c-accent: 45 212 191;
+  --c-accent-2: 34 211 238;
+  --c-accent-soft: 19 78 74;
+  --c-on-accent: 4 47 46;
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+}
+
+:root {
+  --header-height: 3rem;
+
+  --title-color: rgb(var(--c-heading));
+  --title-color-dark: rgb(var(--c-accent));
+  --text-color: rgb(var(--c-body));
+  --muted-color: rgb(var(--c-muted));
+  --body-color: rgb(var(--c-bg));
+  --container-color: rgb(var(--c-surface));
+  --border-color: rgb(var(--c-border));
+  --border-strong: rgb(var(--c-border-strong));
+  --accent: rgb(var(--c-accent));
+  --accent-gradient: linear-gradient(
+    135deg,
+    rgb(var(--c-accent)),
+    rgb(var(--c-accent-2))
+  );
+
+  /*=============== Font and typography ===============*/
+  --body-font: "Inter", system-ui, sans-serif;
+  --display-font: "Space Grotesk", "Inter", sans-serif;
+
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.75rem;
+
+  /*=============== Font Weight ===============*/
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*=============== Margins Bottom ===============*/
+  /* .5rem = 8px | 1rem = 16px ... */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*=============== Z Index ===============*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 992px) {
+  :root {
+    --big-font-size: 2.75rem;
+    --h1-font-size: 1.875rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease, fill 0.3s ease, stroke 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+::selection {
+  background-color: rgb(var(--c-accent) / 0.25);
+  color: var(--title-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--body-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
+
+* {
+  scrollbar-color: var(--border-strong) var(--body-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-family: var(--display-font);
+  font-weight: var(--font-semi-bold);
+  line-height: 1.2;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+  position: relative;
+  padding: 6rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+  letter-spacing: -0.02em;
+}
+
+.section__title::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin: 0.75rem auto 0;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+}
+
+.section__subtitle {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: var(--small-font-size);
+  color: var(--muted-color);
+  margin-bottom: 3.5rem;
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-block;
+  background: var(--accent-gradient);
+  color: rgb(var(--c-on-accent));
+  padding: 1rem 1.75rem;
+  border-radius: 0.875rem;
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 10px 30px -12px rgb(var(--c-accent) / 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -12px rgb(var(--c-accent) / 0.7);
+}
+
+.button--ghost {
+  background: var(--container-color);
+  color: var(--title-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+}
+
+.button--ghost:hover {
+  border-color: rgb(var(--c-accent) / 0.5);
+  color: var(--accent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.button__icon {
+  margin-left: var(--mb-0-5);
+}
+
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+.custom-toast {
+  width: 300px;
+  min-height: 60px;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .container {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+
+  .button {
+    padding: 0.875rem 1.5rem;
+  }
+
+  .button__icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  :root {
+    --big-font-size: 2.25rem;
+  }
+
+  html {
+    scroll-padding-top: 1rem;
+  }
+
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
+
+  .section {
+    padding: 2rem 0 4rem;
+  }
+
+  .section__subtitle {
+    margin-bottom: var(--mb-3);
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

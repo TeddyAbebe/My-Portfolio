@@ -1,0 +1,125 @@
+.about__container {
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 4rem;
+}
+
+.about__img-wrapper {
+  position: relative;
+  justify-self: center;
+}
+
+.about__img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 1rem -1rem -1rem 1rem;
+  border-radius: 1.5rem;
+  background: var(--accent-gradient);
+  opacity: 0.25;
+  z-index: -1;
+}
+
+.about__img {
+  display: block;
+  width: 350px;
+  border-radius: 1.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+}
+
+.about__info {
+  grid-template-columns: repeat(3, 150px);
+  gap: 0.75rem;
+  margin-bottom: var(--mb-2);
+}
+
+.about__box {
+  background-color: var(--container-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about__box:hover {
+  transform: translateY(-4px);
+  border-color: rgb(var(--c-accent) / 0.5);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.about__icon {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: var(--mb-0-5);
+}
+
+.about__title {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.about__subtitle {
+  font-size: var(--tiny-font-size);
+  color: var(--muted-color);
+}
+
+.about__description {
+  padding: 0 4rem 0 0;
+  margin-bottom: var(--mb-2-5);
+  text-align: start;
+}
+
+.about__description strong {
+  color: var(--title-color);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 992px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+
+  .about__img {
+    width: 240px;
+  }
+
+  .about__box {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .about__data {
+    text-align: center;
+  }
+
+  .about__info {
+    justify-content: center;
+  }
+
+  .about__description {
+    padding: 0 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 576px) {
+  .about__info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about__description {
+    padding: 0;
+  }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .about__info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
