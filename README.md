@@ -20,4 +20,4 @@ npm run build
 npm run preview
 ```
 
-The production build is written to `dist`.
+The production build is written to `build`.
