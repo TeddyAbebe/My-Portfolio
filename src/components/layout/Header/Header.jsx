@@ -13,15 +13,12 @@ const NAV_LINKS = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState(
     window.location.hash.slice(1)
   );
 
   useEffect(() => {
     const handleScroll = _.debounce(() => {
-      setHasScrolled(window.scrollY > 0);
-
       let currentSection = "";
       document.querySelectorAll("section[id]").forEach((section) => {
         if (window.scrollY >= section.offsetTop - 80) {
@@ -49,7 +46,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${hasScrolled ? "header--scrolled" : ""}`}>
+    <header className="header">
       <nav className="nav container">
         <a href="#home" className="nav__logo">
           Teddy<span className="nav__logo-dot">.</span>

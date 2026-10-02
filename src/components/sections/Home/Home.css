@@ -193,17 +193,18 @@
 }
 
 .home__img {
-  background: url(./assets/img1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   box-shadow: inset 0 0 0 9px rgb(255 255 255 / 0.3),
     0 30px 60px -20px rgb(var(--c-accent) / 0.25);
   order: 1;
   justify-self: center;
   width: 320px;
   height: 320px;
-  animation: profile__animate 8s ease-in-out infinite 1s;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  animation: profile__animate 8s ease-in-out infinite;
+}
+
+.home__img .glass-frame__img {
+  object-position: center 62%;
 }
 
 @keyframes profile__animate {

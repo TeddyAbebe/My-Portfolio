@@ -1,0 +1,70 @@
+.glass-frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.glass-frame__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.glass-frame__img.is-ready {
+  opacity: 1;
+}
+
+.glass-shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  background-color: rgb(255 255 255 / 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.glass-shimmer::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgb(255 255 255 / 0.55) 48%,
+    rgb(255 255 255 / 0.12) 58%,
+    transparent 74%
+  );
+  animation: glass-wave 1.8s ease-in-out infinite;
+}
+
+.dark .glass-shimmer {
+  background-color: rgb(255 255 255 / 0.06);
+}
+
+.dark .glass-shimmer::before {
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgb(255 255 255 / 0.22) 48%,
+    rgb(255 255 255 / 0.05) 58%,
+    transparent 74%
+  );
+}
+
+@keyframes glass-wave {
+  0% {
+    transform: translateX(-35%);
+  }
+  100% {
+    transform: translateX(35%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-shimmer::before {
+    animation: none;
+  }
+}

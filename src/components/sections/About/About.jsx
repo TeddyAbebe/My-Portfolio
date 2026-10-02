@@ -1,7 +1,8 @@
 import React from "react";
 import "./About.css";
-import Img from "./assets/img2.png";
 import Info from "./Info";
+import GlassImage from "../../ui/GlassImage";
+import { PORTRAIT_URL } from "../../../constants/portrait";
 
 const RESUME_URL =
   "https://drive.google.com/file/d/1rqEGFVYekRsz-i167gHCimDZkMyg35sQ/view?usp=sharing";
@@ -14,7 +15,11 @@ const About = () => {
 
       <div className="about__container container grid">
         <div className="about__img-wrapper" data-aos="fade-right">
-          <img src={Img} alt="Tewodros Abebe" className="about__img" />
+          <GlassImage
+            src={PORTRAIT_URL}
+            alt="Tewodros Abebe"
+            className="about__img"
+          />
         </div>
 
         <div className="about__data" data-aos="fade-left">

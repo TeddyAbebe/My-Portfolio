@@ -1,14 +1,14 @@
 /*=============== THEME TOKENS ===============*/
 /* Colors are stored as RGB channels so Tailwind can apply opacity modifiers. */
 :root {
-  --c-bg: 239 243 242;
-  --c-surface: 248 250 249;
-  --c-surface-2: 231 237 235;
+  --c-bg: 248 246 239;
+  --c-surface: 253 252 248;
+  --c-surface-2: 241 238 228;
   --c-heading: 15 23 42;
   --c-body: 71 85 105;
   --c-muted: 100 116 139;
-  --c-border: 218 226 224;
-  --c-border-strong: 196 208 205;
+  --c-border: 229 225 212;
+  --c-border-strong: 211 205 188;
   --c-accent: 13 148 136;
   --c-accent-2: 8 145 178;
   --c-accent-soft: 204 251 241;

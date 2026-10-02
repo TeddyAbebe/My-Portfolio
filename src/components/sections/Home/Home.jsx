@@ -3,6 +3,8 @@ import "./Home.css";
 import Social from "./Social";
 import Data from "./Data";
 import ScrollDown from "./ScrollDown";
+import GlassImage from "../../ui/GlassImage";
+import { PORTRAIT_URL } from "../../../constants/portrait";
 
 const Home = () => {
   return (
@@ -15,11 +17,11 @@ const Home = () => {
       <div className="home__container container grid">
         <div className="home__content grid">
           <Social />
-          <div
+          <GlassImage
+            src={PORTRAIT_URL}
+            alt="Portrait of Tewodros Abebe"
             className="home__img"
-            role="img"
-            aria-label="Portrait of Tewodros Abebe"
-          ></div>
+          />
           <Data />
         </div>
 

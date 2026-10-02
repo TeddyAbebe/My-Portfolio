@@ -1,24 +1,31 @@
 import React, { useState } from "react";
-import { CgSpinner } from "react-icons/cg";
-import { FiArrowDown } from "react-icons/fi";
+import { FiArrowDown, FiArrowUp } from "react-icons/fi";
 import portfolios from "./portfolioData";
 import Modal from "./Modal";
 import PortfolioCard from "./PortfolioCard";
 
+const INITIAL_COUNT = 6;
+const PAGE_SIZE = 3;
+
 const Portfolio = () => {
-  const [visibleItems, setVisibleItems] = useState(6);
+  const [visibleItems, setVisibleItems] = useState(INITIAL_COUNT);
   const [activePortfolioId, setActivePortfolioId] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
-  const handleLoadMore = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setVisibleItems((prev) => prev + 3);
-      setIsLoading(false);
-    }, 600);
-  };
-
+  const total = portfolios.length;
+  const hasMore = visibleItems < total;
+  const canCollapse = !hasMore && total > INITIAL_COUNT;
   const activePortfolio = portfolios.find((p) => p.id === activePortfolioId);
+
+  const handleToggle = () => {
+    if (hasMore) {
+      setVisibleItems((count) => Math.min(count + PAGE_SIZE, total));
+      return;
+    }
+    setVisibleItems(INITIAL_COUNT);
+    document
+      .getElementById("portfolio")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <section id="portfolio" className="section">
@@ -37,24 +44,18 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {visibleItems < portfolios.length && (
-          <div className="text-center mt-12">
+        {(hasMore || canCollapse) && (
+          <div className="mt-14 flex justify-center">
             <button
               type="button"
-              onClick={handleLoadMore}
-              disabled={isLoading}
-              className="button button--ghost button--flex disabled:opacity-60 disabled:cursor-not-allowed"
+              onClick={handleToggle}
+              className="group inline-flex items-center gap-2 rounded-full border border-line bg-surface px-5 py-2.5 text-sm font-semibold text-heading transition-colors hover:border-accent/50 hover:text-accent"
             >
-              {isLoading ? (
-                <>
-                  <CgSpinner className="animate-spin h-5 w-5 mr-2" />
-                  Loading...
-                </>
+              {hasMore ? "Show more work" : "Show less"}
+              {hasMore ? (
+                <FiArrowDown className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-y-0.5" />
               ) : (
-                <>
-                  Load More
-                  <FiArrowDown className="ml-2 h-4 w-4" />
-                </>
+                <FiArrowUp className="h-4 w-4 text-accent transition-transform duration-300 group-hover:-translate-y-0.5" />
               )}
             </button>
           </div>

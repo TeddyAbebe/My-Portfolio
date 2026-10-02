@@ -20,11 +20,15 @@
 }
 
 .about__img {
-  display: block;
   width: 350px;
+  aspect-ratio: 4 / 5;
   border-radius: 1.5rem;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-card);
+}
+
+.about__img .glass-frame__img {
+  object-position: center 18%;
 }
 
 .about__info {
