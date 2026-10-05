@@ -38,6 +38,7 @@ const qualificationData = {
     {
       title: "Frontend Developer",
       company: "DigiCom",
+      link: "https://digicom.et/",
       date: "12/2025 - Present",
       techStack: [
         { name: "React", icon: "SiReact" },
