@@ -115,6 +115,12 @@ html {
   scroll-padding-top: 4.5rem;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body,
 button,
 input,
@@ -336,6 +342,13 @@ img {
 
   .section__subtitle {
     margin-bottom: var(--mb-3);
+  }
+
+  /* Side-entering AOS animations start off-screen and widen the page on
+     phones, so they rise from below instead. */
+  [data-aos="fade-left"],
+  [data-aos="fade-right"] {
+    transform: translate3d(0, 32px, 0);
   }
 }
 

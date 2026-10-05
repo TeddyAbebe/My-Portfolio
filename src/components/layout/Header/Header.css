@@ -4,6 +4,15 @@
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
+}
+
+/* The blur lives on a pseudo-element: backdrop-filter on .header itself would
+   make it the containing block for the fixed mobile menu and trap it. */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background-color: rgb(var(--c-bg) / 0.7);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
@@ -68,7 +77,9 @@
 
 .nav__icon,
 .nav__close,
-.nav__toggle {
+.nav__toggle,
+.nav__overlay,
+.nav__handle {
   display: none;
 }
 
@@ -79,61 +90,102 @@
     top: initial;
     bottom: 0;
     border-top: 1px solid var(--border-color);
-    border-bottom: none;
   }
 
   .nav {
     height: calc(var(--header-height) + 0.5rem);
   }
 
+  .nav__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: rgb(2 6 23 / 0.45);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .nav__overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
   .nav__menu {
     position: fixed;
-    bottom: -100%;
     left: 0;
-    width: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 0.75rem 1.25rem 1.75rem;
     background-color: var(--container-color);
-    padding: 2rem 1.5rem 4rem;
     border-top: 1px solid var(--border-color);
-    box-shadow: 0 -12px 32px -12px rgb(0 0 0 / 0.25);
     border-radius: 1.5rem 1.5rem 0 0;
-    transition: bottom 0.3s ease;
+    box-shadow: 0 -16px 40px -16px rgb(0 0 0 / 0.35);
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+      visibility 0.35s ease;
   }
 
   .show-menu {
-    bottom: 0;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .nav__handle {
+    display: block;
+    width: 2.5rem;
+    height: 0.3rem;
+    margin: 0 auto 1rem;
+    border-radius: 999px;
+    background-color: var(--border-strong);
   }
 
   .nav__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 0;
     border: none;
+    border-radius: 0;
     background: none;
   }
 
   .nav__link {
     flex-direction: column;
-    gap: 0.25rem;
-    padding: 0.75rem 0.25rem;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.85rem 0.25rem;
     border-radius: 1rem;
+    font-size: var(--smaller-font-size);
   }
 
   .nav__icon {
-    font-size: 1.3rem;
+    display: block;
+    font-size: 1.35rem;
   }
 
   .nav__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    right: 1.3rem;
-    bottom: 0.75rem;
-    font-size: 1.5rem;
+    top: 0.75rem;
+    right: 0.875rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    font-size: 1.25rem;
     background: none;
-    color: var(--title-color);
+    color: var(--muted-color);
   }
 
   .nav__close:hover {
-    color: var(--accent);
+    color: var(--title-color);
   }
 
   .nav__toggle {
@@ -148,20 +200,11 @@
     background-color: var(--container-color);
     border: 1px solid var(--border-color);
   }
-
-  .nav__icon,
-  .nav__close {
-    display: block;
-  }
 }
 
 /* For small devices */
 @media screen and (max-width: 350px) {
   .nav__menu {
-    padding: 2rem 0.25rem 4rem;
-  }
-
-  .nav__list {
-    column-gap: 0;
+    padding: 0.75rem 0.5rem 1.5rem;
   }
 }

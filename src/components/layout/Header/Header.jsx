@@ -45,6 +45,26 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+    const handleResize = () => {
+      if (window.innerWidth > 768) setIsMenuOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEscape);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleEscape);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="header">
       <nav className="nav container">
@@ -52,7 +72,17 @@ const Header = () => {
           Teddy<span className="nav__logo-dot">.</span>
         </a>
 
-        <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}>
+        <div
+          className={`nav__overlay ${isMenuOpen ? "is-open" : ""}`}
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+
+        <div
+          id="mobile-menu"
+          className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`}
+        >
+          <span className="nav__handle" aria-hidden="true" />
           <ul className="nav__list">
             {NAV_LINKS.map(({ id, label, icon }) => (
               <li key={id}>
@@ -86,6 +116,8 @@ const Header = () => {
             type="button"
             className="nav__toggle"
             aria-label="Open menu"
+            aria-controls="mobile-menu"
+            aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(true)}
           >
             <i className="uil uil-apps"></i>
