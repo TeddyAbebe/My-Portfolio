@@ -1,357 +1,277 @@
-/* styles.css */
+/* Splash shown inside #root until React mounts. Scoped so it never styles the app. */
 
-/* Variables */
-:root {
-  --w-size: 200px;
-  --w-margin: calc(-1 * var(--w-size) / 2);
-  --b-size: 70%; /* This is % based on $w-size. Use any value you want (that makes sense) and any unit that you would like (test it) */
-  --box-wrapper-width: var(--b-size);
-  --box-wrapper-height: var(--b-size);
-  --box-wrapper-margin: calc((100% - var(--box-wrapper-height)) / 2)
-    calc((100% - var(--box-wrapper-width)) / 2);
-}
-
-/* Global Styles */
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+html,
+body {
   margin: 0;
-  padding: 0;
 }
 
-/* Wrapper Styles */
-.wrapper {
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f8f6ef;
+  background-image: radial-gradient(rgb(15 23 42 / 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+html.dark .boot {
+  background-color: #070b14;
+  background-image: radial-gradient(rgb(241 245 249 / 0.06) 1px, transparent 1px);
+}
+
+.boot::before {
+  content: "";
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 999px;
+  background: rgb(13 148 136 / 0.14);
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+html.dark .boot::before {
+  background: rgb(45 212 191 / 0.16);
+}
+
+.boot__buddy {
+  position: relative;
+  width: 9rem;
+  height: 9.5rem;
+}
+
+.boot__body {
   position: absolute;
   left: 50%;
-  top: 50%;
-  margin: var(--w-margin);
-  width: var(--w-size);
-  height: var(--w-size);
-  background-color: transparent;
-  border: none;
-  -webkit-user-select: none;
+  bottom: 1.35rem;
+  width: 5.4rem;
+  height: 5.15rem;
+  margin-left: -2.7rem;
+  border-radius: 2.7rem 2.7rem 2.35rem 2.35rem;
+  background:
+    radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.45), transparent 28%),
+    linear-gradient(165deg, #99f6e4 0%, #2dd4bf 38%, #0d9488 100%);
+  box-shadow:
+    inset 0 -10px 16px rgb(15 118 110 / 0.28),
+    0 10px 24px -16px rgb(13 148 136 / 0.8);
+  transform-origin: center bottom;
+  animation: boot-hop 1.8s ease-in-out infinite;
 }
 
-.wrapper .box-wrap {
-  width: var(--box-wrapper-width);
-  height: var(--box-wrapper-height);
-  margin: var(--box-wrapper-margin);
-  position: relative;
-  transform: rotate(-45deg);
-}
-
-.wrapper .box {
-  width: 100%;
-  height: 100%;
+.boot__eye {
   position: absolute;
-  left: 0;
+  top: 1.65rem;
+  width: 1.05rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 -2px 0 rgb(15 23 42 / 0.05);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transform-origin: center;
+  animation: boot-blink 3.6s ease-in-out infinite;
+}
+
+.boot__eye:nth-child(2) {
+  left: 1.2rem;
+}
+
+.boot__eye:nth-child(3) {
+  right: 1.2rem;
+  animation-delay: 0.08s;
+}
+
+.boot__eye i {
+  position: relative;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 999px;
+  background: #0f172a;
+  animation: boot-look 2.6s ease-in-out infinite;
+}
+
+.boot__eye i::after {
+  content: "";
+  position: absolute;
+  top: 0.06rem;
+  right: 0.06rem;
+  width: 0.16rem;
+  height: 0.16rem;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.boot__glasses {
+  position: absolute;
+  z-index: 2;
+  top: 1.56rem;
+  left: 0.62rem;
+  width: 4.16rem;
+  height: 1.28rem;
+  pointer-events: none;
+  background:
+    linear-gradient(#0f172a, #0f172a) left 0.52rem / 0.36rem 2px no-repeat,
+    linear-gradient(#0f172a, #0f172a) right 0.52rem / 0.36rem 2px no-repeat,
+    linear-gradient(#0f172a, #0f172a) center / 0.42rem 2px no-repeat;
+}
+
+.boot__glasses::before,
+.boot__glasses::after {
+  content: "";
+  position: absolute;
   top: 0;
-  background: linear-gradient(
-    to right,
-    #141562,
-    #486fbc,
-    #eab5a1,
-    #8dd6ff,
-    #4973c9,
-    #d07ca7,
-    #f4915e,
-    #f5919e,
-    #b46f89,
-    #141562,
-    #486fbc
-  );
-  background-position: 0% 50%;
-  background-size: 1000% 1000%;
-  visibility: hidden;
+  width: 1.55rem;
+  height: 1.28rem;
+  box-sizing: border-box;
+  border: 2px solid #0f172a;
+  border-radius: 0.28rem;
+  background: rgb(255 255 255 / 0.08);
 }
 
-/* Animation Classes */
-.wrapper .box.one {
-  animation: moveGradient 15s infinite, oneMove 3.5s infinite;
+.boot__glasses::before {
+  left: 0.32rem;
 }
 
-.wrapper .box.two {
-  animation: moveGradient 15s infinite, twoMove 3.5s 0.15s infinite;
+.boot__glasses::after {
+  right: 0.32rem;
 }
 
-.wrapper .box.three {
-  animation: moveGradient 15s infinite, threeMove 3.5s 0.3s infinite;
+.boot__smile {
+  position: absolute;
+  left: 50%;
+  bottom: 1.15rem;
+  width: 1.35rem;
+  height: 0.62rem;
+  margin-left: -0.67rem;
+  border: 2.5px solid transparent;
+  border-bottom-color: #134e4a;
+  border-radius: 0 0 1.2rem 1.2rem;
 }
 
-.wrapper .box.four {
-  animation: moveGradient 15s infinite, fourMove 3.5s 0.575s infinite;
+.boot__arm {
+  position: absolute;
+  top: 2.15rem;
+  right: -0.45rem;
+  width: 0.62rem;
+  height: 1.45rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #5eead4, #0f766e);
+  transform-origin: 50% 0.25rem;
+  animation: boot-wave 1.8s ease-in-out infinite;
 }
 
-.wrapper .box.five {
-  animation: moveGradient 15s infinite, fiveMove 3.5s 0.725s infinite;
+.boot__arm i {
+  position: absolute;
+  left: 50%;
+  bottom: -0.32rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  margin-left: -0.47rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 30%, #ccfbf1, #14b8a6 70%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.5);
 }
 
-.wrapper .box.six {
-  animation: moveGradient 15s infinite, sixMove 3.5s 0.875s infinite;
+.boot__shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 0.45rem;
+  width: 3.8rem;
+  height: 0.75rem;
+  margin-left: -1.9rem;
+  border-radius: 999px;
+  background: rgb(15 23 42 / 0.14);
+  filter: blur(2px);
+  animation: boot-shadow 1.8s ease-in-out infinite;
 }
 
-/* Keyframes */
-@keyframes moveGradient {
-  to {
-    background-position: 100% 50%;
-  }
+html.dark .boot__shadow {
+  background: rgb(0 0 0 / 0.5);
 }
 
-@keyframes oneMove {
-  0% {
-    visibility: visible;
-    clip-path: inset(0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  14.2857% {
-    clip-path: inset(0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  28.5714% {
-    clip-path: inset(35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  42.8571% {
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  57.1428% {
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  71.4285% {
-    clip-path: inset(0% 70% 70% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  85.7142% {
-    clip-path: inset(0% 70% 70% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
+@keyframes boot-hop {
+  0%,
+  28%,
   100% {
-    clip-path: inset(0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transform: translateY(0) scale(1.06, 0.92);
+  }
+
+  38% {
+    transform: translateY(0) scale(1.1, 0.86);
+  }
+
+  58% {
+    transform: translateY(-2.35rem) scale(0.94, 1.08) rotate(-7deg);
+  }
+
+  70% {
+    transform: translateY(-2.55rem) scale(0.98, 1.02) rotate(6deg);
   }
 }
 
-@keyframes twoMove {
-  0% {
-    visibility: visible;
-    clip-path: inset(0% 70% 70% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  14.2857% {
-    clip-path: inset(0% 70% 70% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  28.5714% {
-    clip-path: inset(0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  42.8571% {
-    clip-path: inset(0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  57.1428% {
-    clip-path: inset(35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  71.4285% {
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  85.7142% {
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
+@keyframes boot-shadow {
+  0%,
+  34%,
   100% {
-    clip-path: inset(0% 70% 70% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transform: scaleX(1.15);
+    opacity: 0.75;
+  }
+
+  64% {
+    transform: scaleX(0.5);
+    opacity: 0.22;
   }
 }
 
-@keyframes threeMove {
-  0% {
-    visibility: visible;
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  14.2857% {
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  28.5714% {
-    clip-path: inset(0% 70% 70% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  42.8571% {
-    clip-path: inset(0% 70% 70% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  57.1428% {
-    clip-path: inset(0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  71.4285% {
-    clip-path: inset(0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  85.7142% {
-    clip-path: inset(35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
+@keyframes boot-wave {
+  0%,
+  32%,
   100% {
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transform: rotate(24deg);
+  }
+
+  64% {
+    transform: rotate(-42deg);
+  }
+}
+@keyframes boot-blink {
+  0%,
+  42%,
+  50%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  46% {
+    transform: scaleY(0.12);
   }
 }
 
-@keyframes fourMove {
-  0% {
-    visibility: visible;
-    clip-path: inset(35% 0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  14.2857% {
-    clip-path: inset(35% 0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  28.5714% {
-    clip-path: inset(35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  42.8571% {
-    clip-path: inset(70% 35% 0% 35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  57.1428% {
-    clip-path: inset(70% 35% 0% 35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  71.4285% {
-    clip-path: inset(70% 0 0 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  85.7142% {
-    clip-path: inset(70% 0 0 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
+@keyframes boot-look {
+  0%,
   100% {
-    clip-path: inset(35% 0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transform: translate(0, 1px);
+  }
+
+  40% {
+    transform: translate(2px, 0);
+  }
+
+  70% {
+    transform: translate(-2px, 1px);
   }
 }
 
-@keyframes fiveMove {
-  0% {
-    visibility: visible;
-    clip-path: inset(70% 0 0 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  14.2857% {
-    clip-path: inset(70% 0 0 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  28.5714% {
-    clip-path: inset(35% 0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  42.8571% {
-    clip-path: inset(35% 0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  57.1428% {
-    clip-path: inset(35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  71.4285% {
-    clip-path: inset(35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  85.7142% {
-    clip-path: inset(35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  100% {
-    clip-path: inset(70% 0 0 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-}
-
-@keyframes sixMove {
-  0% {
-    visibility: visible;
-    clip-path: inset(70% 35% 0% 35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  14.2857% {
-    clip-path: inset(70% 35% 0% 35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  28.5714% {
-    clip-path: inset(70% 0 0 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  42.8571% {
-    clip-path: inset(70% 0 0 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  57.1428% {
-    clip-path: inset(35% 0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  71.4285% {
-    clip-path: inset(35% 0% 35% 70% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  85.7142% {
-    clip-path: inset(35% 70% 35% 0 round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  }
-
-  100% {
-    clip-path: inset(70% 35% 0% 35% round 5%);
-    animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+@media (prefers-reduced-motion: reduce) {
+  .boot__body,
+  .boot__arm,
+  .boot__eye,
+  .boot__eye i,
+  .boot__shadow {
+    animation: none;
   }
 }
