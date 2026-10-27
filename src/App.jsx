@@ -1,5 +1,5 @@
 import "./styles/globals.css";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Aos from "aos";
 import { ToastContainer } from "react-toastify";
 import Footer from "./components/layout/Footer";
@@ -11,17 +11,29 @@ import Home from "./components/sections/Home";
 import Portfolio from "./components/sections/Portfolio";
 import Qualification from "./components/sections/Qualification";
 import Skills from "./components/sections/Skills";
+import Loader from "./components/ui/Loader";
 import useTheme from "./hooks/useTheme";
 
 function App() {
   const { theme } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
+  const finishLoading = useCallback(() => setIsLoading(false), []);
 
   useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+
     Aos.init({ once: true, duration: 700, easing: "ease-out-cubic" });
-  }, []);
+    return undefined;
+  }, [isLoading]);
 
   return (
     <div className="overflow-x-clip">
+      {isLoading && <Loader onDone={finishLoading} />}
       <Header />
 
       <main className="main">
