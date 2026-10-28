@@ -1,46 +1,51 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-const VISIBLE_MS = 20000;
+const MAX_VISIBLE_MS = 3000;
 const FADE_MS = 600;
 
 const Loader = ({ onDone }) => {
-  const [hiding, setHiding] = useState(false);
-
   useEffect(() => {
-    const hideTimer = setTimeout(() => setHiding(true), VISIBLE_MS);
-    const doneTimer = setTimeout(onDone, VISIBLE_MS + FADE_MS);
+    const boot = document.getElementById("boot");
+    if (!boot) {
+      onDone();
+      return undefined;
+    }
+
+    let pageLoaded = document.readyState === "complete";
+    let minTimePassed = false;
+    let finished = false;
+    let removeTimer;
+
+    const finish = () => {
+      if (finished || !pageLoaded || !minTimePassed) return;
+      finished = true;
+      boot.classList.add("boot--hide");
+      removeTimer = setTimeout(() => {
+        boot.remove();
+        onDone();
+      }, FADE_MS);
+    };
+
+    const onLoad = () => {
+      pageLoaded = true;
+      finish();
+    };
+
+    if (!pageLoaded) window.addEventListener("load", onLoad);
+
+    const maxTimer = setTimeout(() => {
+      minTimePassed = true;
+      finish();
+    }, MAX_VISIBLE_MS);
 
     return () => {
-      clearTimeout(hideTimer);
-      clearTimeout(doneTimer);
+      clearTimeout(maxTimer);
+      clearTimeout(removeTimer);
+      window.removeEventListener("load", onLoad);
     };
   }, [onDone]);
 
-  return (
-    <div
-      className={`boot${hiding ? " boot--hide" : ""}`}
-      role="status"
-      aria-live="polite"
-      aria-label="Loading portfolio"
-    >
-      <div className="boot__buddy" aria-hidden="true">
-        <div className="boot__body">
-          <span className="boot__arm">
-            <i></i>
-          </span>
-          <span className="boot__eye">
-            <i></i>
-          </span>
-          <span className="boot__eye">
-            <i></i>
-          </span>
-          <span className="boot__glasses"></span>
-          <span className="boot__smile"></span>
-        </div>
-        <div className="boot__shadow"></div>
-      </div>
-    </div>
-  );
+  return null;
 };
 
 export default Loader;

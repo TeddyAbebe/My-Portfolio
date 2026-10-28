@@ -47,6 +47,23 @@ html.dark .boot::before {
   position: relative;
   width: 9rem;
   height: 9.5rem;
+  opacity: 0;
+}
+
+.boot__buddy.is-entering {
+  animation: boot-enter 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes boot-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--boot-x, 0px), var(--boot-y, 80vh), 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .boot__body {
@@ -273,11 +290,18 @@ html.dark .boot__shadow {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .boot__buddy,
+  .boot__buddy.is-entering,
   .boot__body,
   .boot__arm,
   .boot__eye,
   .boot__eye i,
   .boot__shadow {
     animation: none;
+  }
+
+  .boot__buddy {
+    opacity: 1;
+    transform: none;
   }
 }
