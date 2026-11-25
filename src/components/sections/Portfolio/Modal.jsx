@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { IoClose } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { MdArrowForward } from "react-icons/md";
+import ImageCarousel from "../../ui/ImageCarousel";
+import { getProjectImages } from "./portfolioData";
 
 const Modal = ({ portfolio, onClose }) => {
   const modalRef = useRef(null);
@@ -53,13 +55,11 @@ const Modal = ({ portfolio, onClose }) => {
           <IoClose className="h-5 w-5" />
         </button>
 
-        <div className="h-36 w-full shrink-0 overflow-hidden bg-subtle sm:h-44">
-          <img
-            src={portfolio.imgUrl}
-            alt={portfolio.title}
-            className="h-full w-full object-cover object-top"
-          />
-        </div>
+        <ImageCarousel
+          images={getProjectImages(portfolio)}
+          alt={portfolio.title}
+          className="h-36 w-full shrink-0 sm:h-44"
+        />
 
         <div className="space-y-3 overflow-hidden p-5 sm:p-6">
           <span className="inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">

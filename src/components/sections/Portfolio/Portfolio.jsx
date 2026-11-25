@@ -32,14 +32,14 @@ const Portfolio = () => {
       <h2 className="section__title">Projects</h2>
       <span className="section__subtitle">Most recent work</span>
 
-      <div className="container px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="container">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {portfolios.slice(0, visibleItems).map((portfolio, index) => (
             <PortfolioCard
               key={portfolio.id}
               portfolio={portfolio}
               onOpen={setActivePortfolioId}
-              index={index % 3}
+              index={index % 2}
             />
           ))}
         </div>

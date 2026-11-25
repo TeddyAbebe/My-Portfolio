@@ -75,7 +75,7 @@ const Qualification = () => {
       <div className="container">
         <div
           ref={timelineRef}
-          className="relative max-w-3xl mx-auto pl-9 sm:pl-14"
+          className="relative max-w-5xl mx-auto pl-9 sm:pl-14"
         >
           <div className="absolute left-4 sm:left-6 -translate-x-1/2 top-0 h-full w-0.5 rounded-full bg-line">
             <div

@@ -17,6 +17,15 @@ const Id = () => {
   return idCounter++;
 };
 
+/**
+ * A project can show several screenshots: import the extra images above and add
+ *   images: [Cover, Second, Third],
+ * to its entry below. With only `imgUrl`, a single image is shown. When there is
+ * more than one, the card gets dot pagination and a slider automatically.
+ */
+export const getProjectImages = (project) =>
+  project.images?.length ? project.images : [project.imgUrl];
+
 const portfolios = [
   {
     id: Id(),
